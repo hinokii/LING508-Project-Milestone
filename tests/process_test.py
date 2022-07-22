@@ -1,5 +1,8 @@
+import pytest
+import sys
+sys.path.append("./app")
+import app
 from app.process import *
-#import pytest
 
 k_sent = '서울에 있는 냉면 맛집 찾아야겠다'
 j_sent = '猫は基本的にほかの動物を捕らえて食べる肉食動物です'
