@@ -1,0 +1,9 @@
+requests~=2.28.1
+pandas~=1.4.3
+konlpy~=0.6.0
+SudachiPy~=0.6.5
+googletrans~=3.0.0
+bs4~=0.0.1
+beautifulsoup4~=4.11.1
+sklearn~=0.0
+scikit-learn~=1.1.1
