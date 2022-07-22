@@ -1,8 +1,5 @@
-import pytest
-import sys
-sys.path.append("./app")
-import app
 from app.process import *
+import pytest
 
 k_sent = '서울에 있는 냉면 맛집 찾아야겠다'
 j_sent = '猫は基本的にほかの動物を捕らえて食べる肉食動物です'
@@ -11,7 +8,6 @@ e_sent = 'A cat is sleeping on a couch for 10 hours'
 
 def test_k_pos():
     pos = TaggedSentence(k_sent,'korean')
-    print(pos)
     k_pos = pos.get_morpheme_and_pos()
     assert k_pos == [('서울', 'Noun'), ('에', 'Josa'), ('있다', 'Adjective'),
                      ('냉면', 'Noun'), ('맛집', 'Noun'), ('찾다', 'Verb')]
