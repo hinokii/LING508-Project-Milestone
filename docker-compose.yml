@@ -1,8 +1,0 @@
-version: "2"
-services:
-  db:
-    image: restsql/mysql-sakila:latest
-    ports:
-      - "32000:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: test
