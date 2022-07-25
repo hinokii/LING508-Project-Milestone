@@ -8,3 +8,4 @@ beautifulsoup4~=4.11.1
 sklearn~=0.0
 scikit-learn~=1.1.1
 pytest~=7.1.2
+mysql-connector-python~=8.0.29
