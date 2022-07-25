@@ -11,28 +11,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
 
 
-'''
-class WebScraper:
-    def __init__(self, url):
-        self.url = url
-
-    def parse_from_web(self):
-        page = requests.get(self.url)
-        doc = Document(page.text).summary()
-        print(page)
-        soup = BeautifulSoup(doc, "lxml")
-        text = soup.get_text()
-        with open('web_data.txt', 'w') as file:
-            file.write(text)
-        return file
-
-url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
-ws = WebScraper(url)
-file = ws.parse_from_web()
-'''
-
-
-
 # Return tuple of each morpheme (Korean or Japanese) and POS (English)
 class TaggedSentence:
     # Take a sentence and language (Japanese or Korean)
@@ -97,16 +75,41 @@ class Translate:
         translated_text = translator.translate(self.sent, dest=self.lang)
         return translated_text.text
 
+'''
+# This is an optional project milestone for week 3. Although not required
+# to submit, I incorporated into the main project mileston.
+# Obtain text from web, parse and return tokenized text
+class WebScraper:
+    def __init__(self, url, language):
+        self.url = url
+        self.lang = language
 
-class TokenizeKoreanSent:
-    def __init__(self, text):
-        self.text = text
+    def parse_from_web(self):
+        page = requests.get(self.url)
+        doc = Document(page.text).summary()
+        print(page)
+        soup = BeautifulSoup(doc, "lxml")
+        text = soup.get_text()
+        return text
 
-    def tokenize_korean(self):
-        kkma = Kkma()
-        tokenized = kkma.morphs(self.text)
-        tx = kkma.sentences(self.text)
-        return tx
+    def tokenize_text(self):
+        if self.lang == "korean":
+            kkma = Kkma()
+            text = self.parse_from_web()
+            tokenized = kkma.morphs(text)
+            return tokenized
+
+        elif self.lang == "japanese":
+            tokenizer_obj = dictionary.Dictionary().create()
+            mode = tokenizer.Tokenizer.SplitMode.A
+            text = self.parse_from_web()
+            tokenized = [m.surface() for m in
+                         tokenizer_obj.tokenize(text, mode)]
+            return tokenized
+
+        else:
+            return "You entered an unknown language!"
+'''
 
 # Compute TFIDF using sklearn and return pandas DataFrame with tokenized
 # words and corresponding tfidf
@@ -121,7 +124,6 @@ class TFIDF:
         #print(vocabulary)
         df = pd.DataFrame(tfidf[0].T.todense(),
                           index=vectorizer.get_feature_names_out(),
-                          columns=['tfidf'])
-        df = df.sort_values(by=['tfidf'], ascending=False)
+                          columns=["tfidf"])
+        df = df.sort_values(by=["tfidf"], ascending=False)
         return df
-
