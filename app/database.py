@@ -20,7 +20,7 @@ class Database:
                                         )
         '''
         self.cursor = self.conn.cursor()
-        self.cursor.execute("CREATE DATABASE project")
+        self.cursor.execute("CREATE DATABASE IF NOT EXISTS project")
         self.conn = mysql.connector.connect(user='root',
                                host='mysql',
                                passwd='sakila',
