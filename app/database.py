@@ -1,5 +1,5 @@
 import mysql.connector
-from process import *
+#from process import *
 
 class Database:
     def __init__(self, list1, list2):
