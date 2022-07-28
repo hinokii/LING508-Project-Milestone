@@ -9,7 +9,8 @@ class Database:
         self.conn = mysql.connector.connect(user='root',
                                host='mysql',
                                passwd='sakila',
-                               port='3306')
+                               port='3306',
+                               database='project')
         '''
         For local use
         self.conn = mysql.connector.connect(user='root',
@@ -20,13 +21,8 @@ class Database:
                                         )
         '''
         self.cursor = self.conn.cursor()
-        self.cursor.execute("CREATE DATABASE project")
-        self.conn = mysql.connector.connect(user='root',
-                               host='mysql',
-                               passwd='sakila',
-                               port='3306',
-                               database='project')
-        self.cursor = self.conn.cursor()
+        #self.cursor.execute("CREATE DATABASE project")
+
 
     def create_database(self, tablename, col1, col2):
         # Connecting from the server
