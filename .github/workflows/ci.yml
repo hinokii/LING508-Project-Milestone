@@ -1,33 +1,33 @@
-on: 
-  push: 
-    branches: [master] 
-  pull_request: 
-    branches: [master] 
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
-jobs: 
-  test: 
-    env: 
-      ORG: "hinokii" 
-      IMAGE_NAME: "ling-508-project-milestone" 
-      TAG: "latest" 
-    runs-on: ubuntu-latest 
+jobs:
+  test:
+    env:
+      ORG: "hinokii"
+      IMAGE_NAME: "ling-508"
+      TAG: "latest"
+    runs-on: ubuntu-latest
 
-    services: 
-      mysql: 
-        image: restsql/mysql-sakila:latest 
-        env: 
-          MYSQL_ROOT_PASSWORD: sakila 
-          MYSQL_DATABASE: project 
-        ports: 
-          - 3306:3306 
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10 
+    services:
+      mysql:
+        image: restsql/mysql-sakila:latest
+        env:
+          MYSQL_ROOT_PASSWORD: sakila
+          MYSQL_DATABASE: project
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
 
-    steps: 
-      - name: Checkout code 
-        uses: actions/checkout@v2 
-      - name: Build the docker image 
-        run: | 
-          docker build . --file Dockerfile --tag ${ORG}/${IMAGE_NAME}:${TAG} 
-      - name: Run the tests 
-        run: | 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build the docker image
+        run: |
+          docker build . --file Dockerfile --tag ${ORG}/${IMAGE_NAME}:${TAG}
+      - name: Run the tests
+        run: |
           docker run -i --network ${{ job.services.mysql.network }} ${ORG}/${IMAGE_NAME}:${TAG} python -m pytest tests
