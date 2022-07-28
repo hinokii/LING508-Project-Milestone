@@ -6,6 +6,7 @@ services:
       - "32000:3306"
     environment:
       MYSQL_ROOT_PASSWORD: sakila
+      
 
 
 
