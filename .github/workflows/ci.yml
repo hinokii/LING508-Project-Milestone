@@ -1,14 +1,14 @@
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   test:
     env:
       ORG: "hinokii"
-      IMAGE_NAME: "ling-508"
+      IMAGE_NAME: "ling-508-project-milestone"
       TAG: "latest"
     runs-on: ubuntu-latest
 
