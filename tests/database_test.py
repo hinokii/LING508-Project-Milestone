@@ -3,6 +3,9 @@ from app.process import *
 
 def test_database():
     '''
+    url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
+    ws = WebScraper(url)
+    file = ws.parse_from_web()
     text = open('web_data.txt', 'r').read()
     tk = TokenizeKoreanSent(text)
     tokenized = tk.tokenize_korean()
