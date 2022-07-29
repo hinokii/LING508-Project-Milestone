@@ -11,7 +11,7 @@ def test_k_pos():
     k_pos = pos.get_morpheme_and_pos()
     assert k_pos == [('서울', 'Noun'), ('에', 'Josa'), ('있다', 'Adjective'),
                      ('냉면', 'Noun'), ('맛집', 'Noun'), ('찾다', 'Verb')]
-
+'''
 
 def test_j_pos():
     pos1 = TaggedSentence(j_sent, 'japanese')
@@ -24,7 +24,7 @@ def test_j_pos():
                      ('て', 'Post Positional Particle'), ('食べる', 'Verb'),
                      ('肉食', 'Noun'), ('動物', 'Noun'),
                      ('です', 'Auxiliary Verb')]
-'''
+
 
 def test_translate_j_to_k():
     tran = Translate(j_sent, "ko")
