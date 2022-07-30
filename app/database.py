@@ -48,7 +48,7 @@ class Database:
 
         self.conn.commit()
 
-    def retrive_data(self, tablename, col_name):
+    def retrive_data(self, tablename):
         sql = "SELECT * FROM {}".format(tablename)
         self.cursor.execute(sql)
         result = self.cursor.fetchall()
