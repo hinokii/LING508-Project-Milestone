@@ -2,16 +2,19 @@ import mysql.connector
 #from process import *
 
 class Database:
-    def __init__(self, list1, list2):
+    def __init__(self, list1, list2, list3, list4, list5):
         self.list1 = list1
         self.list2 = list2
-
+        self.list3 = list3
+        self.list4 = list4
+        self.list5 = list5
+       
         self.conn = mysql.connector.connect(user='root',
                                host='mysql',
                                passwd='sakila',
                                port='3306')
         '''
-        For local use
+        #For local use
         self.conn = mysql.connector.connect(user='root',
                                             host='localhost',
                                             passwd='sakila',
@@ -24,23 +27,22 @@ class Database:
         self.conn = mysql.connector.connect(user='root',
                                host='mysql',
                                passwd='sakila',
-                               port='3306',
-                               database='project')
-                               
+                               port='3306')
         self.cursor = self.conn.cursor()
-
-    def create_database(self, tablename, col1, col2):
+        
+    def create_database(self, tablename, col1, col2, col3, col4, col5):
         # Connecting from the server
 
-        korean_doc = """CREATE TABLE IF NOT EXISTS {0} ({1} VARCHAR(50), {2} FLOAT)""".format(tablename, col1, col2)
+        korean_doc = """CREATE TABLE IF NOT EXISTS {0} ({1} VARCHAR(50), {2} FLOAT, {3} VARCHAR(50), {4} VARCHAR(50),
+                        {5} VARCHAR(50))""".format(tablename, col1, col2, col3, col4, col5)
         self.cursor.execute(korean_doc)
         self.cursor.execute("ALTER TABLE {} CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci".format(tablename))
 
-        sql = "INSERT INTO {0} ({1}, {2})\
-        VALUES (%s, %s)".format(tablename, col1, col2)
+        sql = "INSERT INTO {0} ({1}, {2}, {3}, {4}, {5})\
+        VALUES (%s, %s, %s, %s, %s)".format(tablename, col1, col2, col3, col4, col5)
 
         for i in range(len(self.list1)):
-            self.cursor.execute(sql, (self.list1[i], self.list2[i]))
+            self.cursor.execute(sql, (self.list1[i], self.list2[i], self.list3[i], self.list4[i], self.list5[i]))
 
         self.conn.commit()
 

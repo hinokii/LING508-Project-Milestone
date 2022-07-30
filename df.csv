@@ -1,0 +1,511 @@
+,tfidf,Japanese,English,POS
+고려,0.3583133135037323,考慮,Consideration,['Noun']
+세율,0.2991603725486412,関税,tariff,['Noun']
+주택,0.297861543455624,ハウジング,Housing,['Noun']
+검토정부,0.1791566567518661,レビュアー,Reviewer,"['Noun', 'Noun']"
+아닌,0.1791566567518661,いいえ,not,['Adjective']
+단일화,0.1791566567518661,統一,Unification,"['Modifier', 'Noun']"
+여소야대,0.1791566567518661,ヨシュヤ,Yeosuya,"['Modifier', 'Noun', 'Suffix']"
+광주시,0.1791566567518661,グワンジュ,Gwangju,['Noun']
+과세기준,0.1791566567518661,課税,Taxation,"['Noun', 'Noun']"
+경기,0.1791566567518661,ゲーム,game,['Noun']
+다주택,0.1791566567518661,マルチハウス,Multi -house,"['Adverb', 'Noun']"
+남한,0.1618555306188156,韓国,south korea,['Noun']
+모습,0.1618555306188156,形,figure,['Noun']
+가격으로,0.1618555306188156,価格で,At price,"['Noun', 'Josa']"
+폐지,0.1618555306188156,廃止,abolition,['Noun']
+아파트,0.1618555306188156,アパート,Apartment,['Noun']
+산성에서,0.1618555306188156,酸性,In acidic,"['Noun', 'Josa']"
+바라본,0.1618555306188156,意見,View,['Verb']
+단지,0.1618555306188156,ただ,just,['Noun']
+14일,0.1618555306188156,14日間,14 days,['Number']
+단계적,0.1618555306188156,ステップ-by -step,Step -by -step,"['Noun', 'Suffix']"
+부동,0.1495801862743206,不動,immobility,['Noun']
+뉴스,0.1495801862743206,ニュース,news,['Noun']
+낮추는,0.1495801862743206,低下,Lowering,['Verb']
+산세,0.1495801862743206,sanning,Sanning,['Noun']
+서울,0.1495801862743206,ソウル,Seoul,['Noun']
+종합,0.140058689479992,合成,Synthesis,['Noun']
+정부가,0.13227906014127,政府,Government,"['Noun', 'Josa']"
+방안도,0.1257014772571827,部屋の図,Room diagram,"['Noun', 'Josa']"
+부세,0.0992871811518746,税,Tax,['Noun']
+이미,0.0,すでに,already,['Adverb']
+이른바,0.0,SO -CALLED,So -called,['Adverb']
+이동해,0.0,動く,Move,['Noun']
+의석을,0.0,座席,The seat,"['Noun', 'Josa']"
+이날,0.0,この日,On this day,"['Determiner', 'Noun']"
+이상,0.0,より多い,More than,['Noun']
+이에,0.0,したがって,Therefore,"['Noun', 'Josa']"
+재정부는,0.0,財務省,The Ministry of Finance,"['Noun', 'Josa']"
+인상한다,0.0,向上,Improve,"['Noun', 'Josa', 'Adverb']"
+유지하되,0.0,それを保管してください,Keep it,"['Noun', 'Suffix', 'Verb']"
+유예해,0.0,延期,Deferment,"['Noun', 'Verb']"
+적용,0.0,申し込み,apply,['Noun']
+위해서,0.0,為に,for,"['Noun', 'Josa']"
+위한,0.0,為に,for,"['Noun', 'Josa']"
+웹의,0.0,ウェブ,Web,"['Noun', 'Josa']"
+적용되는,0.0,該当する,Applicable,"['Noun', 'Verb']"
+원짜리,0.0,WON -RI,Won -ri,"['Noun', 'Verb']"
+원점으로,0.0,元は,Originally,"['Noun', 'Josa']"
+원이었는데,0.0,それは円でした,It was a circle,"['Noun', 'Verb']"
+적용하는,0.0,適用,Applied,"['Noun', 'Verb']"
+원이,0.0,サークル,Circle,"['Noun', 'Josa']"
+이와,0.0,私と,I and,"['Noun', 'Josa']"
+인하도,0.0,インハド,Inhado,['Adjective']
+인터,0.0,インター,Inter,['Noun']
+저축과,0.0,節約と,Savings and,"['Noun', 'Josa']"
+재배포,0.0,再配布,Redistribution,"['Noun', 'Noun']"
+재정부에,0.0,財務省へ,To the Ministry of Finance,"['Noun', 'Josa']"
+장려금을,0.0,奨励,Encouragement,"['Noun', 'Noun', 'Josa']"
+재조정,0.0,再編,Reorganization,"['Noun', 'Noun']"
+장려금은,0.0,奨励,Encouragement,"['Noun', 'Noun']"
+장려금,0.0,補助金,subsidy,"['Noun', 'Noun']"
+장기,0.0,長い時間,long time,['Noun']
+자체,0.0,自体,itself,['Noun']
+저소득층,0.0,低収入,Low -income,"['Determiner', 'Noun', 'Noun']"
+자의,0.0,自己サフィリティ,Self -sufficiency,['Noun']
+자동차,0.0,車,car,['Noun']
+인하,0.0,吸入,Inhales,['Noun']
+있었다,0.0,ありました,there was,['Adjective']
+있어,0.0,私は持っている,I have,['Adjective']
+있습니다,0.0,がある,there is,['Adjective']
+원을,0.0,勝った,Won,"['Noun', 'Josa']"
+있는,0.0,がある,there is,['Adjective']
+일해,0.0,仕事,work,['Noun']
+일정,0.0,カレンダー,calendar,['Noun']
+일보,0.0,日報,daily report,['Noun']
+인해,0.0,なぜなら,Because,['Adjective']
+재산,0.0,財産,property,['Noun']
+있다,0.0,持ってる,have,['Adjective']
+우주를,0.0,スペース,Space,"['Noun', 'Josa']"
+원으로,0.0,円で,In circle,"['Noun', 'Josa']"
+양도,0.0,割り当て,assignment,['Noun']
+안정화에,0.0,安定する,To stabilize,"['Noun', 'Josa']"
+안을,0.0,内側,Inner,"['Noun', 'Josa']"
+안과,0.0,眼科,Ophthalmology,['Noun']
+아웃,0.0,アウト,out,['Noun']
+실질임금이,0.0,本当の賃金,Real wage,"['Noun', 'Noun', 'Josa']"
+신청할,0.0,適用する,To apply,"['Noun', 'Verb']"
+신설,0.0,新しく開いています,newly open,['Noun']
+식의,0.0,形成,Formation,"['Noun', 'Josa']"
+시점까지,0.0,時間によって,By time,"['Noun', 'Josa']"
+승계,0.0,継承,Succession,['Noun']
+수준인,0.0,レベル,Level,"['Noun', 'Josa']"
+수준으로,0.0,レベルで,At the level,"['Noun', 'Josa']"
+수요를,0.0,要求する,Demand,"['Noun', 'Josa']"
+수요가,0.0,要求する,Demand,"['Noun', 'Josa']"
+수에,0.0,数,In number,"['Noun', 'Josa']"
+수억대,0.0,数億,Hundreds of millions,"['Modifier', 'Noun']"
+수억,0.0,数億,Hundreds of millions of,['Modifier']
+수십억대,0.0,数十億,Billions,"['Modifier', 'Noun']"
+수십억,0.0,数十億,Billions,['Modifier']
+수를,0.0,番号,Number,"['Noun', 'Josa']"
+속도,0.0,速度,speed,['Noun']
+소득세를,0.0,所得税,Income tax,"['Noun', 'Josa']"
+소득세,0.0,所得税,Income tax,['Noun']
+소득,0.0,所得,income,['Noun']
+세종,0.0,セジョン,Sejong,['Noun']
+세율을,0.0,税率,Tax rate,"['Noun', 'Josa']"
+세율은,0.0,税率,The tax rate,"['Noun', 'Josa']"
+야당의,0.0,反対,Opposition,"['Noun', 'Josa']"
+어긋난다는,0.0,圧倒的,Overwhelming,['Verb']
+원에서,0.0,円で,In the circle,"['Noun', 'Josa']"
+어렵다,0.0,難しい,difficult,['Adjective']
+원대,0.0,ダッジ,Dodge,['Noun']
+원까지,0.0,に,To,"['Noun', 'Josa']"
+적용해,0.0,申し込み,Apply,"['Noun', 'Verb']"
+요인으로,0.0,要因として,As a factor,"['Noun', 'Josa']"
+요건을,0.0,要件,Requirements,"['Noun', 'Josa']"
+요건,0.0,要件,Requirements,['Noun']
+완화해,0.0,リラックス,Relax,"['Noun', 'Verb']"
+완화를,0.0,リラクゼーション,Relaxation,"['Noun', 'Josa']"
+완화,0.0,簡易,ease,['Noun']
+올해에,0.0,ことし,This year,"['Noun', 'Josa']"
+올해,0.0,ことし,this year,['Noun']
+올렸다,0.0,アップロード,Uploaded,['Verb']
+올라간다,0.0,上がる,Go up,['Verb']
+올라가,0.0,登る,Climb,['Verb']
+오히려,0.0,それよりも,rather,['Noun']
+예정이다,0.0,期待されています,Is expected,"['Noun', 'Josa']"
+예상된다,0.0,期待される,Expected,"['Noun', 'Verb']"
+였던,0.0,それか,That,['Verb']
+연금,0.0,年金,Pension,['Noun']
+연구기관인,0.0,研究所,Research institute,"['Noun', 'Josa']"
+여소야대의,0.0,ヨシュヤ,Yeosuya,"['Modifier', 'Noun', 'Suffix', 'Josa']"
+에서도,0.0,の,In,['Josa']
+에서,0.0,で,at,['Josa']
+없이는,0.0,それなし,Without,['Adjective']
+없애기보다,0.0,乗る,Ride,['Verb']
+언론사에서,0.0,メディアで,In the media,"['Noun', 'Josa']"
+언론사,0.0,ジャーナリスト,Journalist,['Noun']
+적용한다,0.0,申し込み,Apply,"['Noun', 'Verb']"
+10,0.0,10,10,['Number']
+적용했고,0.0,適用,Applied,"['Noun', 'Verb']"
+태초의,0.0,主要な,Primary,"['Noun', 'Josa']"
+폐지나,0.0,廃止,Abolition,"['Noun', 'Josa']"
+페이지,0.0,ページ,Page,['Noun']
+티브로,0.0,tivro,Tivro,"['Noun', 'Noun']"
+틀은,0.0,フレーム,The frame,"['Noun', 'Josa']"
+특별,0.0,特別な,Special,['Noun']
+퇴직자에,0.0,退職者に,To the retirees,"['Noun', 'Suffix', 'Josa']"
+퇴직연금을,0.0,老齢年金,Retirement pension,"['Noun', 'Noun', 'Josa']"
+퇴직연금,0.0,老齢年金,Retirement pension,"['Noun', 'Noun']"
+퇴직금에서,0.0,退職手当,In retirement allowance,"['Noun', 'Josa']"
+퇴직금,0.0,退職金,severance pay,['Noun']
+퇴직,0.0,退職,retirement,['Noun']
+통일하는,0.0,統一,Unified,"['Noun', 'Verb']"
+통일하고,0.0,統一,Unifying,"['Noun', 'Josa']"
+타협점을,0.0,妥協,Compromise,"['Noun', 'Noun', 'Josa']"
+지적이,0.0,知的,Intellectual,"['Noun', 'Josa']"
+크게,0.0,大きい,Big,['Noun']
+취지다,0.0,意図,Intent,"['Noun', 'Josa']"
+추진한다,0.0,促進,Promote,"['Noun', 'Josa', 'Adverb']"
+추진하기,0.0,昇進,Promotion,"['Noun', 'Verb']"
+최대,0.0,最大,maximum,['Noun']
+최고,0.0,一番,best,['Noun']
+체험,0.0,経験,experience,['Noun']
+채널,0.0,チャネル,channel,['Noun']
+찾을,0.0,見つかった,Found,['Verb']
+차례,0.0,注文,order,['Noun']
+차등,0.0,微分,Differential,['Noun']
+차단,0.0,ブロック,block,['Noun']
+징벌,0.0,罰,punishment,['Noun']
+폐지에,0.0,廃止,Abolition,"['Noun', 'Josa']"
+폐지하고,0.0,廃止,Abolish,"['Noun', 'Josa']"
+폐지하면,0.0,廃止されたとき,When abolished,"['Noun', 'Verb']"
+포함,0.0,含む,include,['Noun']
+환원하기,0.0,割引,Reduction,"['Noun', 'Verb']"
+확정하겠다,0.0,確認します,I will confirm,"['Noun', 'Verb']"
+확대하는,0.0,ズーミング,Zooming,"['Noun', 'Verb']"
+확대돼,0.0,拡張,Expanded,"['Noun', 'Verb']"
+확대,0.0,拡大,enlargement,['Noun']
+형평성에,0.0,公平,Equity,"['Noun', 'Josa']"
+협조,0.0,協力,Cooperation,['Noun']
+현행,0.0,現在,Present,['Noun']
+현재는,0.0,現在,Is currently,"['Noun', 'Josa']"
+현재,0.0,今日,today,['Noun']
+했다,0.0,やりました,did,['Verb']
+핵심,0.0,主なポイント,main point,['Noun']
+해당,0.0,対応する,corresponding,['Noun']
+합계액이,0.0,総量,The total amount,"['Noun', 'Noun', 'Josa']"
+함께,0.0,一緒,together,['Adverb']
+한해,0.0,年,Year,['Noun']
+한도도,0.0,制限,Limit,"['Noun', 'Josa']"
+한꺼번에,0.0,同時に,At the same time,"['Verb', 'Noun', 'Josa']"
+한국,0.0,韓国,korea,['Noun']
+하위,0.0,下,down,['Noun']
+하세요,0.0,やれ,do it,['Verb']
+하다는,0.0,することが,To be,['Verb']
+표준의,0.0,標準,Standard,"['Noun', 'Josa']"
+포함해,0.0,含む,Including,"['Noun', 'Verb']"
+포함시키기로,0.0,含める,To include,"['Noun', 'Verb']"
+포함될,0.0,含める,To be included,"['Noun', 'Verb']"
+포함된다,0.0,含まれています,It is included,"['Noun', 'Verb']"
+집값,0.0,住宅価格,House price,['Noun']
+지적에서,0.0,知的で,In intellectual,"['Noun', 'Josa']"
+적용했던,0.0,適用,Applied,"['Noun', 'Verb']"
+조세연구원,0.0,税務研究者,Tax researcher,"['Modifier', 'Modifier', 'Noun']"
+주택자가,0.0,住宅の人,Housing person,"['Noun', 'Suffix', 'Josa']"
+주택자,0.0,家主,Homeowner,"['Noun', 'Suffix']"
+주최한,0.0,ホスト,Hosted,"['Noun', 'Josa']"
+주제발표에,0.0,トピックの発表で,In the topic announcement,"['Modifier', 'Modifier', 'Noun', 'Josa']"
+주장이,0.0,請求,Claim,"['Noun', 'Josa']"
+주는,0.0,与える,Giving,['Verb']
+종부,0.0,種族,Species,['Noun']
+조정해,0.0,調整,Adjust,"['Noun', 'Verb']"
+조정하는,0.0,調整,Adjusted,"['Noun', 'Verb']"
+조정지역,0.0,調整エリア,Adjustment area,"['Noun', 'Noun']"
+조정대상지역,0.0,調整可能なエリア,Adjustable area,"['Noun', 'Noun', 'Noun']"
+조절도,0.0,調整,Adjustment,"['Noun', 'Josa']"
+조세재정연구원이,0.0,税金金融研究所,Tax Finance Research Institute,"['Modifier', 'Modifier', 'Noun', 'Noun', 'Josa']"
+조세,0.0,税,Tax,['Noun']
+지적에,0.0,知的で,In intellectual,"['Noun', 'Josa']"
+제임스,0.0,ジェームズ,James,['Noun']
+제도의,0.0,制度的,Institutional,"['Noun', 'Josa']"
+제도,0.0,ポリシー,policy,['Noun']
+제기됐다,0.0,それは育てられました,It was raised,"['Noun', 'Verb']"
+정책,0.0,ポリシー,Policy,['Noun']
+정부의,0.0,政府,Government,"['Noun', 'Josa']"
+정부는,0.0,政府,The government,"['Noun', 'Josa']"
+정부,0.0,統治,goverment,['Noun']
+전재,0.0,転載,reprinting,"['Modifier', 'Noun']"
+세액,0.0,課税額,Tax amount,['Noun']
+전병,0.0,パンケーキ,Pancake,['Noun']
+전년,0.0,去年,Last year,"['Modifier', 'Noun']"
+적정,0.0,適切,Adequate,['Noun']
+주택자는,0.0,住宅の人,Housing person,"['Noun', 'Suffix', 'Josa']"
+주택자에게,0.0,家に,To the home,"['Noun', 'Suffix', 'Josa']"
+주택자의,0.0,家,Home,"['Noun', 'Noun']"
+준다,0.0,与える,give,['Verb']
+지원,0.0,サポート,support,['Noun']
+지난해에는,0.0,去年,Last year,"['Noun', 'Josa']"
+지난달,0.0,先月,last month,['Noun']
+지나치게,0.0,過度に,excessively,['Verb']
+지급액도,0.0,支払金額,Payment amount,"['Noun', 'Noun', 'Josa']"
+증여,0.0,授与,bestowal,['Noun']
+증가시키는,0.0,増加,Increasing,"['Noun', 'Verb']"
+중인,0.0,の,In,['Noun']
+중이다,0.0,入ってください,Be in,"['Noun', 'Josa']"
+중심으로,0.0,中央に,to the center,"['Noun', 'Josa']"
+중소기업의,0.0,中小企業,SMEs,"['Noun', 'Josa']"
+중산층과,0.0,中流階級,The middle class,"['Noun', 'Josa']"
+중산층,0.0,中流階級,Middle class,['Noun']
+중과세를,0.0,大きな課税,Great taxation,"['Noun', 'Josa']"
+중과세로,0.0,中間税で,In the middle tax,"['Noun', 'Josa']"
+중과세,0.0,中間課税,Middle taxation,['Noun']
+중과를,0.0,中央部,Middle department,"['Noun', 'Josa']"
+중과,0.0,中くらい,Medium,['Noun']
+줄인다는,0.0,減少,Reduced,['Verb']
+줄인다,0.0,減らす,Reduce,['Verb']
+줄이는,0.0,減少,Reduced,['Verb']
+줄이고,0.0,減らす,Reduce,"['Noun', 'Josa']"
+줄이겠다는,0.0,削減する,To reduce,['Verb']
+줄여,0.0,減らす,Reduce,['Verb']
+줄어든다,0.0,下降,Decrease,['Verb']
+줄어드는,0.0,契約可能,contractible,['Verb']
+준비하고,0.0,準備,Prepared,"['Noun', 'Josa']"
+전세금,0.0,家賃,Rent,"['Modifier', 'Noun']"
+상황을,0.0,状況,The situation,"['Noun', 'Josa']"
+세법,0.0,課税,Taxation,['Noun']
+거쳤다,0.0,通り抜けた,Went through,['Verb']
+국회에서,0.0,国会で,In the National Assembly,"['Noun', 'Josa']"
+국회,0.0,会議,Congress,['Noun']
+국책,0.0,全国の本,National book,['Noun']
+구독하기,0.0,サブスクリプション,Subscription,"['Noun', 'Verb']"
+구간을,0.0,セクション,Section,"['Noun', 'Josa']"
+관리,0.0,管理,management,['Noun']
+관련,0.0,関連している,related,['Noun']
+과표,0.0,鬼ごっこ,Tag,['Noun']
+과열,0.0,過熱,overheating,['Noun']
+과세를,0.0,課税,Taxation,"['Noun', 'Josa']"
+과세,0.0,課税,taxation,['Noun']
+과도,0.0,過剰,excess,['Noun']
+공청회,0.0,公聴会,Public hearing,['Noun']
+공제를,0.0,控除,Deduction,"['Noun', 'Josa']"
+공제금액이,0.0,控除額,The deduction amount,"['Modifier', 'Modifier', 'Noun', 'Josa']"
+공제,0.0,控除,deduction,['Noun']
+공정시장,0.0,公正市場,Fair market,"['Noun', 'Noun']"
+공개한,0.0,開示,Disclosed,"['Noun', 'Josa']"
+고려해,0.0,検討,Consider,"['Noun', 'Verb']"
+계획이다,0.0,プラン,Plan,"['Noun', 'Josa']"
+경제정책방향,0.0,経済政策の方向,Economic policy direction,"['Noun', 'Noun']"
+경우,0.0,場合,case,['Noun']
+경감해,0.0,減らす,Reduce,"['Noun', 'Verb']"
+것이다,0.0,そうなるでしょう,will be,"['Noun', 'Josa']"
+것을,0.0,もの,Thing,"['Noun', 'Josa']"
+것은,0.0,とは,What is,"['Noun', 'Josa']"
+검토하고,0.0,レビュー,Review,"['Noun', 'Josa']"
+근로,0.0,仕事,Work,['Noun']
+근로자는,0.0,労働者,Workers,"['Noun', 'Josa']"
+근속,0.0,サービス,Service,['Noun']
+기준을,0.0,基準,Criteria,"['Noun', 'Josa']"
+낮추고,0.0,低い,Low,['Verb']
+낮은,0.0,低い,low,['Adjective']
+납입한도가,0.0,支払い制限,Payment limit,"['Noun', 'Noun', 'Josa']"
+납입,0.0,支払い,Payment,['Noun']
+납부유예,0.0,保護観察,Probation,"['Noun', 'Noun']"
+납부를,0.0,支払い,Payment,"['Noun', 'Josa']"
+나왔다,0.0,それは出てきました,It came out,['Verb']
+나설,0.0,並外れた,Outstanding,['Verb']
+나선,0.0,螺旋,spiral,['Noun']
+까지,0.0,それまで,Until,['Josa']
+기획,0.0,予定,plan,['Noun']
+기준이,0.0,基準,Standards,"['Noun', 'Josa']"
+기준은,0.0,標準はです,The standard is,"['Noun', 'Josa']"
+금지,0.0,禁止,prohibition,['Noun']
+기준으로,0.0,ベース,Based,"['Noun', 'Josa']"
+기준과,0.0,基準と,Standards and,"['Noun', 'Josa']"
+기준,0.0,標準,standard,['Noun']
+기존,0.0,既存 ,existing,['Noun']
+기조였던,0.0,それは基調講演でした,It was a keynote,"['Noun', 'Verb']"
+기재,0.0,書きます,write,['Noun']
+기자,0.0,記者,reporter,['Noun']
+기여하지,0.0,貢献していません,Not contributing,"['Noun', 'Verb']"
+기업의,0.0,企業,Corporate,"['Noun', 'Josa']"
+기간에,0.0,期間中,In the period,"['Noun', 'Josa']"
+기간도,0.0,間隔,Duration,"['Noun', 'Josa']"
+급등을,0.0,驚く,Surprising,"['Noun', 'Josa']"
+검토,0.0,診る,examine,['Noun']
+거센,0.0,硬い,stiff,"['Noun', 'Verb']"
+내리는,0.0,降車可能,dismountable,['Verb']
+거론된다,0.0,一致した,Matched,"['Noun', 'Verb']"
+7년에서,0.0,7年間,7 years,"['Number', 'Foreign']"
+700만,0.0,700万,7 million,['Number']
+60,0.0,60,60,['Number']
+5년으로,0.0,5年,5 years,"['Number', 'Foreign']"
+5000만,0.0,5000万,50 million,['Number']
+4000억,0.0,"4,000億",400 billion,['Number']
+4000만,0.0,"4,000万",40 million,['Number']
+3억,0.0,3億,300 million,['Number']
+300,0.0,300,300,['Number']
+2채에,0.0,2,2,"['Number', 'Noun', 'Josa']"
+2채를,0.0,2,2,"['Number', 'Noun', 'Josa']"
+2억,0.0,2億,200 million,['Number']
+28일,0.0,28日,28 days,['Number']
+25,0.0,25,25,['Number']
+22,0.0,22,22,['Number']
+21일,0.0,21日,21 days,['Number']
+20년을,0.0,20年,20 years,"['Number', 'Foreign']"
+2022,0.0,2022,2022,['Number']
+2019년,0.0,2019年,2019,['Number']
+200,0.0,200,200,['Number']
+1채보다,0.0,1,One,"['Number', 'Noun', 'Josa']"
+1채를,0.0,1,1,"['Number', 'Noun', 'Josa']"
+1조,0.0,グループ1,group 1,['Number']
+150,0.0,150,150,['Number']
+14억,0.0,14億,1.4 billion,['Number']
+13,0.0,13,13,['Number']
+11억,0.0,11億,1.1 billion,['Number']
+7월,0.0,7月に,In July,['Number']
+900만,0.0,900万,9 million,['Number']
+all,0.0,全て,all,['Alpha']
+감면도,0.0,割引,Reduction,['Verb']
+거론,0.0,切断,Disconnection,['Noun']
+개편을,0.0,再編,Reorganization,"['Noun', 'Josa']"
+개편에,0.0,再編成で,In the reorganization,"['Noun', 'Josa']"
+개편안을,0.0,再編,Reorganization,"['Noun', 'Josa']"
+개편안은,0.0,再編成,The reorganization,"['Noun', 'Josa']"
+개편,0.0,再編,Reorganization,['Noun']
+개정해,0.0,改訂,Revised,"['Noun', 'Verb']"
+개정안에,0.0,改正で,In the amendment,"['Noun', 'Josa']"
+개정안,0.0,修正,Amendment,['Noun']
+같은,0.0,同じ,same,['Adjective']
+갖춘,0.0,装備,Equipped,['Verb']
+강남,0.0,江南,Gangnam,['Noun']
+가진,0.0,持ってる,have,['Verb']
+com,0.0,com,com,['Alpha']
+가업,0.0,家族経営,Family business,['Noun']
+가액,0.0,価値,Value,['Noun']
+가능성도,0.0,可能性,Possibility,"['Noun', 'Josa']"
+가구가,0.0,家具,Furniture,"['Noun', 'Josa']"
+가격에,0.0,価格で,At the price,"['Noun', 'Josa']"
+가격,0.0,価格,price,['Noun']
+rights,0.0,権利,rights,['Alpha']
+reserved,0.0,予約済み,reserved,['Alpha']
+ramblas,0.0,ランブラス,Ramblas,['Alpha']
+herstory,0.0,彼女の話,herstory,['Alpha']
+donga,0.0,祈り,prayer,['Alpha']
+copyright,0.0,著作権,copyright,['Alpha']
+낮추기로,0.0,低くする,To lower,['Verb']
+내용을,0.0,コンテンツ,Content,"['Noun', 'Josa']"
+세금을,0.0,税金,Taxes,"['Noun', 'Josa']"
+받는,0.0,主題,subject,['Verb']
+부동산,0.0,不動産,real estate,['Noun']
+부담하는,0.0,負担,Burdensome,"['Noun', 'Verb']"
+부담이,0.0,負担,Burden,"['Noun', 'Josa']"
+부담을,0.0,負担,Burden,"['Noun', 'Josa']"
+부담은,0.0,負担,The burden,"['Noun', 'Josa']"
+부담,0.0,負担,Burden,['Noun']
+부는,0.0,裕福,Wealthy,['Verb']
+부과하는,0.0,充電,Charged,"['Noun', 'Verb']"
+부과,0.0,徴収,levy,['Noun']
+보유자에게,0.0,ホルダーに,To the holder,"['Noun', 'Suffix', 'Josa']"
+보유자는,0.0,ホルダー,The holder,"['Noun', 'Suffix', 'Josa']"
+보유자,0.0,保有者,holder,"['Noun', 'Suffix']"
+보유세,0.0,保有税,Holding tax,"['Noun', 'Noun']"
+보고,0.0,報告,report,['Noun']
+별도로,0.0,別々に,Separately,"['Noun', 'Josa']"
+법인세,0.0,法人税,Corporate tax,['Noun']
+법을,0.0,法,Law,"['Noun', 'Josa']"
+방침이다,0.0,行きます,Go to,"['Noun', 'Josa']"
+방침,0.0,ポリシー,policy,['Noun']
+방안을,0.0,部屋,The room,"['Noun', 'Josa']"
+방안,0.0,対策,measures,['Noun']
+방식이다,0.0,なれ,Be,"['Noun', 'Josa']"
+밝혔다,0.0,明らかに,Revealed,['Verb']
+발표할,0.0,発表される,To be announced,"['Noun', 'Verb']"
+발표한다,0.0,プレゼンテーション,Presentation,"['Noun', 'Verb']"
+발표한,0.0,プレゼンテーション,presentation,"['Noun', 'Josa']"
+발표하는,0.0,提示,Presented,"['Noun', 'Verb']"
+부세의,0.0,税,Tax,"['Noun', 'Josa']"
+부추겨,0.0,励まし,Encouraging,['Verb']
+분석도,0.0,分析,Analysis,"['Noun', 'Josa']"
+상승으로,0.0,上向き,Upward,"['Noun', 'Josa']"
+세금,0.0,税,tax,['Noun']
+선정하며,0.0,選択しました,Selected,"['Noun', 'Verb']"
+선임연구위원은,0.0,上級研究員,Senior research fellow,"['Noun', 'Modifier', 'Modifier', 'Noun', 'Josa']"
+선을,0.0,ライン,Line,"['Noun', 'Josa']"
+서울에,0.0,ソウル,Seoul,"['Noun', 'Josa']"
+서민층의,0.0,一般,Common,"['Noun', 'Noun', 'Josa']"
+생겼다,0.0,wed,Awed,['Verb']
+100,0.0,100,100,['Number']
+상향할,0.0,上向き,Upward,"['Noun', 'Verb']"
+상향하는,0.0,上向き,Upward,"['Noun', 'Verb']"
+상한이,0.0,上限,Upper limit,"['Noun', 'Josa']"
+상한을,0.0,上限,The upper limit,"['Noun', 'Josa']"
+상속인에,0.0,相続人,In heirs,"['Noun', 'Josa']"
+불러왔다는,0.0,呼び出されました,Called,"['Verb', 'Verb']"
+상속세,0.0,相続税,inheritance tax,['Noun']
+상속,0.0,継承,Inheritance,['Noun']
+상대적으로,0.0,比較的,Relatively,"['Noun', 'Suffix', 'Josa']"
+상관없이,0.0,かかわらず,Regardless of,['Adjective']
+사후,0.0,ポスト-DEATH,Post -death,['Noun']
+사진은,0.0,写真はです,The picture is,"['Noun', 'Josa']"
+사례가,0.0,場合,Case,"['Noun', 'Josa']"
+사람이,0.0,人々,People,"['Noun', 'Josa']"
+사람보다,0.0,人々以上のもの,More than people,"['Noun', 'Josa']"
+비조정대상지역,0.0,非調整領域,Non -adjustment area,"['Noun', 'Noun', 'Noun', 'Noun']"
+비율을,0.0,比率,The ratio,"['Noun', 'Josa']"
+비슷한,0.0,似ている,Similar,['Adjective']
+받을,0.0,受信,Receiving,['Verb']
+반발이,0.0,反発,Backlash,"['Noun', 'Josa']"
+네이버에서,0.0,Naverで,In Naver,"['Noun', 'Josa']"
+밖에,0.0,外側,outside,['Josa']
+도입한,0.0,紹介された,Introduced,"['Noun', 'Josa']"
+더욱,0.0,もっと,More,['Noun']
+더불어,0.0,一緒,together,['Verb']
+대해,0.0,約,about,['Noun']
+대한,0.0,約,About,['Noun']
+대책으로,0.0,対策で,In countermeasures,"['Noun', 'Josa']"
+대신,0.0,代わりは,instead,['Noun']
+대상을,0.0,目標,Target,"['Noun', 'Josa']"
+대상,0.0,目標,Target,['Noun']
+대비,0.0,準備,prepare,['Noun']
+대로,0.0,道,Road,['Noun']
+대기업과,0.0,大企業,Large corporations,"['Noun', 'Josa']"
+당초,0.0,最初は,Initially,['Noun']
+담은,0.0,汚染,Contaminated,['Verb']
+담는,0.0,デリバティブ,Derivative,['Verb']
+달리,0.0,違う,Different,['Noun']
+다주택자의,0.0,マルチファミリー,Multi -family,"['Adverb', 'Noun', 'Suffix', 'Josa']"
+다주택자에게,0.0,マルチホメアナーに,To multi -homeowners,"['Adverb', 'Noun', 'Suffix', 'Josa']"
+다주택자,0.0,マルチホメーナー,Multi -homeowner,"['Adverb', 'Noun', 'Suffix']"
+다수,0.0,たくさんの,many,['Noun']
+다만,0.0,しかし,but,['Noun']
+다르게,0.0,違う,differently,['Adjective']
+다닌,0.0,daunted,Daunted,['Verb']
+늘었다는,0.0,増加しました,Increased,['Verb']
+늘릴,0.0,拡大,Extension,['Verb']
+늘리고,0.0,拡張する,Extend,['Verb']
+높은,0.0,高い,High,['Adjective']
+도입해,0.0,紹介された,Introduced,"['Noun', 'Verb']"
+돌려,0.0,順番,Turn,['Verb']
+동아,0.0,ドンガ,Donga,['Noun']
+매겨,0.0,タップします,Tap,"['Modifier', 'Noun']"
+박희,0.0,パークヒ,Park Hee,['Noun']
+민주당은,0.0,民主党,Democrats,"['Noun', 'Josa']"
+미만이어야,0.0,それはより少ないはずです,It should be less than,"['Noun', 'Verb']"
+미만으로,0.0,以下,Less,"['Noun', 'Josa']"
+물가,0.0,価格,Prices,['Noun']
+문재인,0.0,ムーン・ジェ - イン,Moon Jae -in,['Noun']
+무단,0.0,unthourse,Unauthorse,['Noun']
+못할,0.0,ひどく,Badly,"['VerbPrefix', 'Verb']"
+목적인,0.0,目的,Purpose,"['Noun', 'Josa']"
+모든,0.0,毎日,every,['Noun']
+매출액,0.0,取った,take,"['Noun', 'Noun']"
+매기는,0.0,蒸し暑い,Muggy,"['Noun', 'Josa']"
+말했다,0.0,言った,said,"['Noun', 'Verb']"
+되는,0.0,伐採,felled,['Verb']
+많아,0.0,たくさんの,many,['Adjective']
+막기,0.0,幹,stem,['Verb']
+마련하고,0.0,準備,Prepared,"['Noun', 'Josa']"
+링크,0.0,リンク,link,['Noun']
+똘똘한,0.0,頭がいい,Clever,"['Noun', 'Josa']"
+떼는,0.0,取り外し可能,Removable,['Verb']
+따져,0.0,考慮,Consideration,['Verb']
+따른,0.0,ファローアップ,Follow -up,['Verb']
+따르면,0.0,によると,according to,['Verb']
+따라,0.0,従う,follow,['Verb']
+등을,0.0,私の背中,My back,"['Noun', 'Josa']"
+등도,0.0,バックグラウンド,Background,"['Noun', 'Josa']"
+회사를,0.0,会社,Company,"['Noun', 'Josa']"
