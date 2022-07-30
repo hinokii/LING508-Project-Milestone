@@ -27,7 +27,9 @@ class Database:
         self.conn = mysql.connector.connect(user='root',
                                host='mysql',
                                passwd='sakila',
-                               port='3306')
+                               port='3306',
+                               database='project')
+                               
         self.cursor = self.conn.cursor()
         
     def create_database(self, tablename, col1, col2, col3, col4, col5):
