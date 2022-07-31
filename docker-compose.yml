@@ -9,7 +9,7 @@ services:
       
 services:
   jdkSetup:
-    image: java:openjdk-9
+    image: openjdk:9
     command: echo $JAVA_HOME
     ports:
       - 6060:6060 
