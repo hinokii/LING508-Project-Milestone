@@ -7,7 +7,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: sakila
       
-
+services:
+  jdkSetup:
+    image: java:openjdk-9
+    command: echo $JAVA_HOME
+    ports:
+      - 6060:6060
 
 
 
