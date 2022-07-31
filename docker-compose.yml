@@ -12,9 +12,15 @@ services:
     image: java:openjdk-9
     command: echo $JAVA_HOME
     ports:
-      - 6060:6060
-
-
+      - 6060:6060 
+  nodeSEtup:
+    image: node:alpine
+    volumes:
+      - ./serenityjs:/usr/src/app/serenityjs
+    working_dir: /usr/src/app/serenityjs
+    command: npm test
+    ports:
+      - 7070:7070
 
 
 
