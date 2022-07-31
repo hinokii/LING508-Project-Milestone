@@ -5,11 +5,12 @@ k_sent = '서울에 있는 냉면 맛집 찾아야겠다'
 j_sent = '猫は基本的にほかの動物を捕らえて食べる肉食動物です'
 e_sent = 'A cat is sleeping on a couch for 10 hours'
 
-
+'''
 def test_k_pos():
     pos = TaggedSentence(k_sent,'korean')
     assert pos.tagged == [('서울', 'Noun'), ('에', 'Josa'), ('있다', 'Adjective'),
                      ('냉면', 'Noun'), ('맛집', 'Noun'), ('찾다', 'Verb')]
+'''
 
 def test_j_pos():
     pos1 = TaggedSentence(j_sent, 'japanese')
