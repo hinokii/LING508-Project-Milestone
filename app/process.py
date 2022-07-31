@@ -36,11 +36,12 @@ file = ws.parse_from_web()
 # Return tuple of each morpheme (Korean or Japanese) and POS (English)
 class TaggedSentence:
     # Take a sentence and language (Japanese or Korean)
-    def __init__(self, sentence, languages):
+    def __init__(self, sentence, language):
         self.sent = sentence
-        self.lang = languages
+        self.lang = language
+        self.tagged = self._get_tagged()
 
-    def get_morpheme_and_pos(self):
+    def _get_tagged(self):
         # For Korean, use konlpy.tag to get pos
         if self.lang == "korean":
             okt = Okt()
@@ -83,18 +84,12 @@ class TaggedSentence:
             return list(j_pos)
 
         else:
-            return "You entered an unknown language!"
+            raise NotImplementedError
 
-
-# Translate a sentence using googletrans
-class Translate:
-    def __init__(self, sentence, language):
-        self.sent = sentence
-        self.lang = language
-
-    def translate(self):
+    # Translate a sentence using googletrans
+    def translate(self, destination_language):
         translator = Translator()
-        translated_text = translator.translate(self.sent, dest=self.lang)
+        translated_text = translator.translate(self.sent, dest=destination_language)
         return translated_text.text
 
 
@@ -108,13 +103,24 @@ class TokenizeKoreanSent:
         tx = kkma.sentences(self.text)
         return tx
 
+class TokenizeKoreanSent:
+    def __init__(self, text):
+        self.text = text
+
+    def tokenize_korean(self):
+        kkma = Kkma()
+        tokenized = kkma.morphs(self.text)
+        tx = kkma.sentences(self.text)
+        return tx
+
 # Compute TFIDF using sklearn and return pandas DataFrame with tokenized
 # words and corresponding tfidf
-class TFIDF:
+class VocabTFIDF:
     def __init__(self, sentences):
         self.sent = sentences
+        self.df = self._create_pandas()
 
-    def create_pandas_word_and_tfidf(self):
+    def _create_pandas(self):
         vectorizer = TfidfVectorizer(use_idf=True)
         tfidf = vectorizer.fit_transform(self.sent)
         vocabulary = vectorizer.vocabulary_
