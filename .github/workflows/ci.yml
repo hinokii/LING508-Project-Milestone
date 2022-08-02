@@ -14,9 +14,9 @@ jobs:
 
     services:
       mysql:
-        image: restsql/mysql-sakila:latest
+        image: mysql
         env:
-          MYSQL_ROOT_PASSWORD: sakila
+          MYSQL_ROOT_PASSWORD: test
           MYSQL_DATABASE: project
         ports:
           - 3306:3306

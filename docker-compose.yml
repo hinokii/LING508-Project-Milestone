@@ -6,12 +6,12 @@ services:
       - db
 
   db:
-    image: restsql/mysql-sakila:latest
+    image: mysql
 
     ports:
       - "32000:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: sakila
+      MYSQL_ROOT_PASSWORD: test
     volumes:
       - ./data:/docker-entrypoint-initdb.d/:ro
       
