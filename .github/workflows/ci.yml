@@ -28,16 +28,6 @@ jobs:
       - name: Build the docker image
         run: |
           docker build . --file Dockerfile --tag ${ORG}/${IMAGE_NAME}:${TAG}
-      - name: Setup Java 9
-        uses: actions/setup-java@v1.4.3
-        with:
-          java-version: '9'
-          java-package: jdk
-          architecture: x64
-      - name: set JDK_9 environment variable for kotlin compiler
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
-        run: echo ::set-env name=JDK_9::$(echo $JAVA_HOME)
       - name: Run the tests
         run: |
           docker run -i --network ${{ job.services.mysql.network }} ${ORG}/${IMAGE_NAME}:${TAG} python -m pytest tests

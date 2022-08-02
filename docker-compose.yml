@@ -1,26 +1,21 @@
 version: "2"
 services:
-  mysql:
-    image: restsql/mysql-sakila:latest
+  app:
+    build: .
+    links:
+      - db
+
+  db:
+    image: mysql
     ports:
       - "32000:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: sakila
-      
-services:
-  jdkSetup:
-    image: openjdk:9
-    command: echo $JAVA_HOME
-    ports:
-      - 6060:6060 
-  nodeSEtup:
-    image: node:alpine
+      MYSQL_ROOT_PASSWORD: test
     volumes:
-      - ./serenityjs:/usr/src/app/serenityjs
-    working_dir: /usr/src/app/serenityjs
-    command: npm test
-    ports:
-      - 7070:7070
+      - ./data:/docker-entrypoint-initdb.d/:ro
+      
+
+
 
 
 
