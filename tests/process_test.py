@@ -45,4 +45,4 @@ def test_tfidf():
     df = tfidf.df
     result = df.loc[df.index == '고려', 'tfidf'].to_string(index=False)
     assert float(result) == 0.358313
-    '''
+   
