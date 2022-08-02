@@ -14,10 +14,3 @@ services:
       MYSQL_ROOT_PASSWORD: test
     volumes:
       - ./data:/docker-entrypoint-initdb.d/:ro
-      
-
-
-
-
-
-
