@@ -31,5 +31,5 @@ def test_database_tfidf():
     '''
     repo = MysqlRepository()
     result = repo.load_lexicon()
-    assert result[0] == ('고려', 0.358313, '考慮', 'Consideration', "['Noun']")
+    assert result[0]['tfidf'] == 0.358313
 

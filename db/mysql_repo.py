@@ -8,38 +8,46 @@ class MysqlRepository(Repository):
 
         config = {'user': 'root',
             	  'passwd': 'test',
-                  'host': 'mysql',
-                  'port': '3306',
+                  'host': 'localhost',
+                  'port': '32000',
                   'database': 'proj'}
 
         self.conn = mysql.connector.connect(**config)
-        print("Good")
         self.cursor = self.conn.cursor()
-    def __del__(self):
-        self.cursor.close()
-        self.conn.close()
+    #def __del__(self):
+        #self.cursor.close()
+        #self.conn.close()
 
-    def mapper(self, entry: dict) -> KoreanWords:
-        lexical_entry = KoreanWords(word=entry.get('word'),
-                                     pos=entry.get('pos'),
+    def mapper(self, entry: dict) -> KoreanWord:
+        korean_word = KoreanWord()
+        korean_word.word = entry['word']
+        korean_word.tfidf = entry['tfidf']
+        korean_word.japanese = entry['japanese']
+        korean_word.english = entry['english']
+        korean_word.pos = entry['pos']
+        '''
+        lexical_entry = KoreanWords(word=entry('word'),
                                      tfidf=entry.get('tfidf'),
                                      japanese=entry.get('japanese'),
-                                     english=entry.get('english'))
-        return lexical_entry
+                                     english=entry.get('english'),
+                                    pos=entry.get('pos'))
+        '''
+        return korean_word
 
     def load_lexicon(self) -> KoreanWords:
         sql = 'SELECT * FROM korean'
         print("check")
         self.cursor.execute(sql)
-        entries = [{'word': word,
-                    'pos': pos,
+        entries = [{'id': id,
+                    'word': word,
                     'tfidf': tfidf,
                     'japanese': japanese,
-                    'english': english
-                    } for (word, pos, tfidf, japanese, english) in self.cursor]
-        lexicon = [self.mapper(entry) for entry in entries]
-        return lexicon
+                    'english': english,
+                    'pos': pos,
+                    } for (id, word, tfidf, japanese, english, pos) in self.cursor]
 
-repo = MysqlRepository()
-lexicon = repo.load_lexicon()
-print(lexicon)
+        lexicon = [self.mapper(entry) for entry in entries]
+        return entries
+
+
+
