@@ -10,5 +10,6 @@ def test_japanese_database():
     repo = MysqlRepository()
     repo.insert_japanese_table(words, k_lst, e_lst, tags)
     result = repo.load_japanese_lexicon()
-    print(result)
-    assert result[0]['korean'] == '마른'
+    for i in result:
+        if i.word == '時計':
+            assert i.english == 'clock'
