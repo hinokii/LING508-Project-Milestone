@@ -5,7 +5,7 @@ from model.word import *
 class MysqlRepository(Repository):
     def __init__(self):
         super().__init__()
-        '''
+
         #For local use
         config = {'user': 'root',
             	  'passwd': 'test',
@@ -18,7 +18,7 @@ class MysqlRepository(Repository):
                   'host': 'mysql',
                   'port': '3306',
                   'database': 'project'}
-
+        '''
         self.conn = mysql.connector.connect(**config)
         self.cursor = self.conn.cursor()
 
@@ -40,9 +40,9 @@ class MysqlRepository(Repository):
 
     def insert_table(self, list1, list2, list3, list4, list5):
         """CREATE DATABASE IF NOT EXISTS project""";
-        #korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
+        korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
                                                                          #english VARCHAR(50), pos VARCHAR(50))"""
-        #self.cursor.execute(korean_doc)
+        self.cursor.execute(korean_doc)
         self.cursor.execute("ALTER TABLE korean CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")
 
         sql = "INSERT INTO korean VALUES (%s, %s, %s, %s, %s)"
