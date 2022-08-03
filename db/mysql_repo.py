@@ -5,13 +5,20 @@ from model.word import *
 class MysqlRepository(Repository):
     def __init__(self):
         super().__init__()
-
+        '''
+        For local use
         config = {'user': 'root',
             	  'passwd': 'test',
                   'host': 'localhost',
                   'port': '32000',
                   'database': 'project'}
-
+        '''
+        config = {'user': 'root',
+            	  'passwd': 'test',
+                  'host': 'mysql',
+                  'port': '3306',
+                  'database': 'project'}
+        
         self.conn = mysql.connector.connect(**config)
         self.cursor = self.conn.cursor()
 
