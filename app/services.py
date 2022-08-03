@@ -170,17 +170,3 @@ class Services:
         else:
             return "I don't have that word!"
 
-print(Services('天守', 'japanese').generate_japanese_table())
-'''
-text = open('web_data1.txt', 'r').read()
-tokenizer_obj = dictionary.Dictionary().create()
-mode = tokenizer.Tokenizer.SplitMode.B
-
-j_mor = [m.surface() for m in
-                     tokenizer_obj.tokenize(text, mode)]
-print(j_mor)
-print(VocabTFIDF(j_mor).df['tfidf'])
-
-
-
-'''

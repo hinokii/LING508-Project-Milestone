@@ -39,10 +39,10 @@ class MysqlRepository(Repository):
         return korean_word
 
     def insert_korean_table(self, list1, list2, list3, list4, list5):
-        """CREATE DATABASE IF NOT EXISTS project""";
-        #korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
-                                                                         #english VARCHAR(50), pos VARCHAR(50))"""
-        #self.cursor.execute(korean_doc)
+        #"""CREATE DATABASE IF NOT EXISTS project""";
+        korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
+                                                                         english VARCHAR(50), pos VARCHAR(50))"""
+        self.cursor.execute(korean_doc)
         self.cursor.execute("ALTER TABLE korean CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")
 
         sql = "INSERT INTO korean VALUES (%s, %s, %s, %s, %s)"
@@ -83,10 +83,10 @@ class MysqlRepository(Repository):
         return japanese_word
 
     def insert_japanese_table(self, list1, list2, list3, list4):
-        """CREATE DATABASE IF NOT EXISTS project""";
-        #korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
-                                                                         #english VARCHAR(50), pos VARCHAR(50))"""
-        #self.cursor.execute(korean_doc)
+        #"""CREATE DATABASE IF NOT EXISTS project""";
+        japanese_doc = """CREATE TABLE IF NOT EXISTS japanese (word VARCHAR(50), korean VARCHAR(50),
+                                                                         english VARCHAR(50), pos VARCHAR(50))"""
+        self.cursor.execute(japanese_doc)
         self.cursor.execute("ALTER TABLE japanese CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")
 
         sql = "INSERT INTO japanese VALUES (%s, %s, %s, %s)"
