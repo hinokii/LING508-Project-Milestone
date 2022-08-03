@@ -29,17 +29,14 @@ class MysqlRepository(Repository):
         korean_word.japanese = entry['japanese']
         korean_word.english = entry['english']
         korean_word.pos = entry['pos']
-        '''
-        lexical_entry = KoreanWords(word=entry('word'),
-                                     tfidf=entry.get('tfidf'),
-                                     japanese=entry.get('japanese'),
-                                     english=entry.get('english'),
-                                    pos=entry.get('pos'))
-        '''
+
         return korean_word
 
     def insert_korean_table(self, list1, list2, list3, list4, list5):
-        #"""CREATE DATABASE IF NOT EXISTS project""";
+        # The following three lines of code is not needed when running locally since data/init.db properly runs
+        # when docker-compose up based on docker-compose.yml, but on github, it doesn't seem to initial
+        # data/init.db so I have to manually create table here. I think I need to add it to github action,
+        # but not sure how.
         korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
                                                                          english VARCHAR(50), pos VARCHAR(50))"""
         self.cursor.execute(korean_doc)
@@ -64,7 +61,7 @@ class MysqlRepository(Repository):
                     } for (word, tfidf, japanese, english, pos) in self.cursor]
 
         lexicon = [self.korean_mapper(entry) for entry in entries]
-        return entries
+        return lexicon
 
     def del_korean_table(self):
         sql = "DROP TABLE korean"
@@ -74,16 +71,19 @@ class MysqlRepository(Repository):
 
     def japanese_mapper(self, entry: dict) -> JapaneseWord:
         japanese_word = JapaneseWord()
-        japanese_word .word = entry['word']
+        japanese_word.word = entry['word']
         #japanese_word .tfidf = entry['tfidf']
-        japanese_word .korean = entry['korean']
-        japanese_word .english = entry['english']
-        japanese_word .pos = entry['pos']
+        japanese_word.korean = entry['korean']
+        japanese_word.english = entry['english']
+        japanese_word.pos = entry['pos']
 
         return japanese_word
 
     def insert_japanese_table(self, list1, list2, list3, list4):
-        #"""CREATE DATABASE IF NOT EXISTS project""";
+        # The following three lines of code is not needed when running locally since data/init.db properly runs
+        # when docker-compose up based on docker-compose.yml, but on github, it doesn't seem to initial
+        # data/init.db so I have to manually create table here. I think I need to add it to github action,
+        # but not sure how.
         japanese_doc = """CREATE TABLE IF NOT EXISTS japanese (word VARCHAR(50), korean VARCHAR(50),
                                                                          english VARCHAR(50), pos VARCHAR(50))"""
         self.cursor.execute(japanese_doc)
@@ -107,7 +107,7 @@ class MysqlRepository(Repository):
                     } for (word, korean, english, pos) in self.cursor]
 
         lexicon = [self.japanese_mapper(entry) for entry in entries]
-        return entries
+        return lexicon
 
     def del_japanese_table(self):
         sql = "DROP TABLE japanese"

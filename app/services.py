@@ -25,10 +25,6 @@ class WebScraper:
         with open('web_data.txt', 'w') as file:
             file.write(text)
         return file
-https://www3.nhk.or.jp/news/html/20220803/k10013750631000.html
-url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
-ws = WebScraper(url)
-file = ws.parse_from_web()
 '''
 
 # Return tuple of each morpheme (Korean or Japanese) and POS (English)
@@ -128,6 +124,9 @@ class Services:
         self.result = self._show_result()
 
     def generate_korean_table(self):
+        #url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
+        #ws = WebScraper(url)
+        #file = ws.parse_from_web()
         text = open('web_data.txt', 'r').read()
         tk = TokenizeKoreanSent(text)
         tokenized = tk.tokenize_korean()
@@ -142,6 +141,8 @@ class Services:
         return self.repo.load_korean_lexicon()
 
     def generate_japanese_table(self):
+        #URL = "https://www.yomiuri.co.jp/hobby/travel/20220802-OYT1T50077/"
+        #web_scr = WebScraper(URL, "japanese").parse_from_web()
         text = open('web_data1.txt', 'r').read()
         words = [x for x, y in TaggedSentence(text, 'japanese').tagged][1:10]
         tags =  [y for x, y in TaggedSentence(text, 'japanese').tagged]
@@ -156,14 +157,15 @@ class Services:
 
         if self.target_lang == 'korean':
             db = self.generate_korean_table()
-            for i in range(len(db)):
-                if db[i]['word'] == self.search_word:
-                    result = db[i]
+            for i in db:
+                if i.word == self.search_word:
+                    result = i
+
         elif self.target_lang == 'japanese':
             db1 = self.generate_japanese_table()
-            for j in range(len(db1)):
-                if db1[j]['word'] == self.search_word:
-                    result = db1[j]
+            for j in db1:
+                if j.word == self.search_word:
+                    result = j
 
         if result is not None:
             return result
