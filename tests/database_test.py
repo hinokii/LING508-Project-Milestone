@@ -37,8 +37,8 @@ def test_database_tfidf():
     eng = df['English'].tolist()
     jp = df['Japanese'].tolist()
     repo = MysqlRepository()
-    repo.del_table
-    repo = MysqlRepository()
+    #repo.del_table
+    #repo = MysqlRepository()
     repo.insert_table(words, tfidfs, jp, eng, pos)
     result = repo.load_lexicon()
     assert result[0]['tfidf'] == 0.358313
