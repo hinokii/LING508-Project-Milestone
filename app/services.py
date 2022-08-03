@@ -25,7 +25,7 @@ class WebScraper:
         with open('web_data.txt', 'w') as file:
             file.write(text)
         return file
-
+https://www3.nhk.or.jp/news/html/20220803/k10013750631000.html
 url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
 ws = WebScraper(url)
 file = ws.parse_from_web()
@@ -121,12 +121,13 @@ class VocabTFIDF:
         return df
 
 class Services:
-    def __init__(self, search_word):
+    def __init__(self, search_word, target_lang):
         self.search_word = search_word
+        self.target_lang = target_lang
         self.repo = MysqlRepository()
         self.result = self._show_result()
 
-    def generate_table(self):
+    def generate_korean_table(self):
         text = open('web_data.txt', 'r').read()
         tk = TokenizeKoreanSent(text)
         tokenized = tk.tokenize_korean()
@@ -136,18 +137,50 @@ class Services:
         tags = [str([y for x, y in TaggedSentence(word, 'korean').tagged]) for word in words]
         j_lst = [TaggedSentence(word, 'korean').translate("ja") for word in words]
         e_lst = [TaggedSentence(word, 'korean').translate("en") for word in words]
-        self.repo.insert_table(words, tfidfs, j_lst, e_lst, tags)
+        self.repo.insert_korean_table(words, tfidfs, j_lst, e_lst, tags)
 
-        return self.repo.load_lexicon()
+        return self.repo.load_korean_lexicon()
+
+    def generate_japanese_table(self):
+        text = open('web_data1.txt', 'r').read()
+        words = [x for x, y in TaggedSentence(text, 'japanese').tagged][1:10]
+        tags =  [y for x, y in TaggedSentence(text, 'japanese').tagged]
+        k_lst = [TaggedSentence(word, 'japanese').translate("ko") for word in words]
+        e_lst = [TaggedSentence(word, 'japanese').translate("en") for word in words]
+        self.repo.insert_japanese_table(words, k_lst, e_lst, tags)
+
+        return self.repo.load_japanese_lexicon()
 
     def _show_result(self):  # show tfidf, japanese, enlighs and pos of the Korean word (search_word)
-        db = self.generate_table()
         result = ''
-        for i in range(len(db)):
-            if db[i]['word'] == self.search_word:
-                result = db[i]
+
+        if self.target_lang == 'korean':
+            db = self.generate_korean_table()
+            for i in range(len(db)):
+                if db[i]['word'] == self.search_word:
+                    result = db[i]
+        elif self.target_lang == 'japanese':
+            db1 = self.generate_japanese_table()
+            for j in range(len(db1)):
+                if db1[j]['word'] == self.search_word:
+                    result = db1[j]
+
         if result is not None:
             return result
         else:
             return "I don't have that word!"
 
+print(Services('天守', 'japanese').generate_japanese_table())
+'''
+text = open('web_data1.txt', 'r').read()
+tokenizer_obj = dictionary.Dictionary().create()
+mode = tokenizer.Tokenizer.SplitMode.B
+
+j_mor = [m.surface() for m in
+                     tokenizer_obj.tokenize(text, mode)]
+print(j_mor)
+print(VocabTFIDF(j_mor).df['tfidf'])
+
+
+
+'''
