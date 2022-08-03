@@ -1,5 +1,5 @@
 from db.mysql_repo import *
-
+import pandas as pd
 
 def test_database_tfidf():
     '''
@@ -29,7 +29,15 @@ def test_database_tfidf():
     db.create_database("korean_tfidf", "word", 'tfidf', 'japanese', 'english', 'pos')
     result = db.retrive_data("korean_tfidf")
     '''
+    df = pd.read_csv('df.csv', index_col=0)
+
+    tfidfs = df['tfidf'].tolist()
+    words = df.index.values.tolist()
+    pos = df['POS'].tolist()
+    eng = df['English'].tolist()
+    jp = df['Japanese'].tolist()
     repo = MysqlRepository()
+    repo.insert_table(words, tfidfs, jp, eng, pos)
     result = repo.load_lexicon()
     assert result[0]['tfidf'] == 0.358313
 
