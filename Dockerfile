@@ -8,10 +8,4 @@ RUN pip install -r requirements.txt
 #CMD tail -f /dev/null
 
 
-FROM openjdk:11
 
-COPY . .
-COPY . /usr/src/myapp
-WORKDIR /usr/src/myapp
-RUN javac Main.java
-CMD ["java", "Main"]
