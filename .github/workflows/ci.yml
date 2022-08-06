@@ -24,12 +24,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        #uses: actions/checkout@v2
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
-      - run: java -cd java HelloWorldApp
+        uses: actions/checkout@v2
       - name: Build the docker image
         run: |
           docker build . --file Dockerfile --tag ${ORG}/${IMAGE_NAME}:${TAG}
