@@ -28,11 +28,6 @@ jobs:
       - name: Build the docker image
         run: |
           docker build . --file Dockerfile --tag ${ORG}/${IMAGE_NAME}:${TAG}
-      - uses: actions/setup-java@v3
-        with:
-          distribution: '<distribution>'
-          java-version: 8
-      - run: echo "JAVA_8=$JAVA_HOME" >> $GITHUB_ENV
       - name: Run the tests
         run: |
           docker run -i --network ${{ job.services.mysql.network }} ${ORG}/${IMAGE_NAME}:${TAG} python -m pytest tests
