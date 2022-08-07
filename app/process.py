@@ -9,8 +9,10 @@ from bs4 import BeautifulSoup
 from konlpy.tag import Kkma
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
+import os
 
-
+os.environ['JAVA_HOME'] = '/usr/lib/jvm/java-11-openjdk-amd64'
+print('JAVA_HOME' in os.environ)
 '''
 class WebScraper:
     def __init__(self, url):
@@ -54,7 +56,7 @@ class TaggedSentence:
         # For Japanese, use sudachipy to get pos
         elif self.lang == "japanese":
             tokenizer_obj = dictionary.Dictionary().create()
-            mode = tokenizer.Tokenizer.SplitMode.A
+            mode = tokenizer.Tokenizer.SplitMode.C
 
             # Tokenize to get morphemes
             j_mor = [m.surface() for m in
@@ -103,15 +105,6 @@ class TokenizeKoreanSent:
         tx = kkma.sentences(self.text)
         return tx
 
-class TokenizeKoreanSent:
-    def __init__(self, text):
-        self.text = text
-
-    def tokenize_korean(self):
-        kkma = Kkma()
-        tokenized = kkma.morphs(self.text)
-        tx = kkma.sentences(self.text)
-        return tx
 
 # Compute TFIDF using sklearn and return pandas DataFrame with tokenized
 # words and corresponding tfidf
