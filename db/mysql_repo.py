@@ -22,6 +22,10 @@ class MysqlRepository(Repository):
         self.conn = mysql.connector.connect(**config)
         self.cursor = self.conn.cursor()
 
+    def __del__(self):
+        self.cursor.close   
+        self.connection.close()
+        
     def korean_mapper(self, entry: dict) -> KoreanWord:
         korean_word = KoreanWord()
         korean_word.word = entry['word']
