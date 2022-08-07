@@ -49,9 +49,8 @@ class MysqlRepository(Repository):
 
         self.conn.commit()
 
-    def load_korean_lexicon(self) -> KoreanWords:
+    def create_korean_dict(self):
         sql = 'SELECT * FROM korean'
-        print("check")
         self.cursor.execute(sql)
         entries = [{'word': word,
                     'tfidf': tfidf,
@@ -59,7 +58,10 @@ class MysqlRepository(Repository):
                     'english': english,
                     'pos': pos,
                     } for (word, tfidf, japanese, english, pos) in self.cursor]
+        return entries
 
+    def load_korean_lexicon(self) -> KoreanWords:
+        entries = self.create_korean_dict()
         lexicon = [self.korean_mapper(entry) for entry in entries]
         return lexicon
 
@@ -96,7 +98,7 @@ class MysqlRepository(Repository):
 
         self.conn.commit()
 
-    def load_japanese_lexicon(self) -> JapaneseWords:
+    def create_japanese_dict(self):
         sql = 'SELECT * FROM japanese'
         self.cursor.execute(sql)
         entries = [{'word': word,
@@ -105,7 +107,10 @@ class MysqlRepository(Repository):
                     'english': english,
                     'pos': pos,
                     } for (word, korean, english, pos) in self.cursor]
+        return entries
 
+    def load_japanese_lexicon(self) -> JapaneseWords:
+        entries = self.create_japanese_dict()
         lexicon = [self.japanese_mapper(entry) for entry in entries]
         return lexicon
 
