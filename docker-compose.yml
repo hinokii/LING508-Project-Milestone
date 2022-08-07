@@ -13,6 +13,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: test
     volumes:
-      - /home/hinoki/PycharmProjects/pythonProject1/data:/docker-entrypoint-initdb.d/:ro
-
       #- ./data:/docker-entrypoint-initdb.d/:ro
+      - PycharmProjects/pythonProject1/data:/docker-entrypoint-initdb.d/:ro
