@@ -9,10 +9,7 @@ from bs4 import BeautifulSoup
 from konlpy.tag import Kkma
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
-import os
 
-os.environ['JAVA_HOME'] = '/usr/lib/jvm/java-11-openjdk-amd64'
-print('JAVA_HOME' in os.environ)
 '''
 class WebScraper:
     def __init__(self, url):
