@@ -13,5 +13,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: test
     volumes:
-      #- ./data:/docker-entrypoint-initdb.d/:ro
-      - /pythonProject1/data:/docker-entrypoint-initdb.d/:ro
+      - ./data:/docker-entrypoint-initdb.d/:ro
+      #- /pythonProject1/data:/docker-entrypoint-initdb.d/:ro
