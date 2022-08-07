@@ -28,13 +28,13 @@ def test_translate_j_to_k():
     assert tran.translate("ko") == '고양이는 기본적으로 다른 동물을 잡고 먹는 육식 ' \
                                '동물입니다.'
 
-'''
+
 def test_translate_k_to_e():
     tran = TaggedSentence(k_sent, "korean")
     assert tran.translate("en") == 'I need to find a cold noodle restaurant in ' \
                                'Seoul'
 
-
+'''
 def test_tfidf():
     #URL = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
     #web_scr = WebScraper(URL, "korean")
