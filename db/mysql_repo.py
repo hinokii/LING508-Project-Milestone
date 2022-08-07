@@ -22,10 +22,6 @@ class MysqlRepository(Repository):
         self.conn = mysql.connector.connect(**config)
         self.cursor = self.conn.cursor()
 
-    def __del__(self):
-        self.cursor.close   
-        self.connection.close()
-        
     def korean_mapper(self, entry: dict) -> KoreanWord:
         korean_word = KoreanWord()
         korean_word.word = entry['word']
@@ -110,6 +106,8 @@ class MysqlRepository(Repository):
                     'korean': korean,
                     'english': english,
                     'pos': pos,
+                    
+                    
                     } for (word, korean, english, pos) in self.cursor]
         return entries
 
@@ -124,5 +122,13 @@ class MysqlRepository(Repository):
         self.cursor.close()
         self.conn.close()
 
+    def deleted_database(self):
+        try:
+            sql = "DROP DATABASE project"
+            self.cursor.execute(sql)
+            self.conn.close()
+        except:
+            return "can't delete"
 
-
+#mm = MysqlRepository()
+#mm.deleted_database()
