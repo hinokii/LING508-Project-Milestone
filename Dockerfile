@@ -2,9 +2,6 @@ FROM python:3.8
 
 COPY . .
 
-FROM postgres:9.4
-COPY /PycharmProjects/pythonProject1/data/docker-entrypoint-initdb.d
-
 RUN pip install -U pip
 RUN pip install -r requirements.txt
 
