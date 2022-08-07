@@ -121,4 +121,11 @@ class MysqlRepository(Repository):
         self.cursor.execute(sql)
         self.cursor.close()
         self.conn.close()
+        
+        
+    def del_database(self):
+    	sql = "DROP DATABASE project"
+        self.cursor.execute(sql)
+        self.cursor.close()
+        self.conn.close()
 
