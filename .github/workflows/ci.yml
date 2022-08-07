@@ -14,10 +14,11 @@ jobs:
 
     services:
       mysql:
-        image: mysql:latest
+        #image: mysql:latest
+        image: mysql-db:latest
         env:
           MYSQL_ROOT_PASSWORD: test
-          MYSQL_DATABASE: project
+          #MYSQL_DATABASE: project
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
