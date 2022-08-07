@@ -122,13 +122,3 @@ class MysqlRepository(Repository):
         self.cursor.close()
         self.conn.close()
 
-    def deleted_database(self):
-        try:
-            sql = "DROP DATABASE project"
-            self.cursor.execute(sql)
-            self.conn.close()
-        except:
-            return "can't delete"
-
-#mm = MysqlRepository()
-#mm.deleted_database()
