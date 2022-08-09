@@ -117,13 +117,15 @@ class VocabTFIDF:
         return df
 
 class Services:
-    def __init__(self, search_word, target_lang):
-        self.search_word = search_word
-        self.target_lang = target_lang
+    def __init__(self):
+        #self.search_word = search_word
+        #self.target_lang = target_lang
         self.repo = MysqlRepository()
-        self.result = self._show_result()
+        self.k_dict = self._generate_korean_dct()
+        self.j_dict = self._generate_japanese_dct()
+        #self.result = self._show_result()
 
-    def generate_korean_table(self):
+    def _generate_korean_dct(self):
         #url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
         #ws = WebScraper(url)
         #file = ws.parse_from_web()
@@ -138,9 +140,9 @@ class Services:
         e_lst = [TaggedSentence(word, 'korean').translate("en") for word in words]
         self.repo.insert_korean_table(words, tfidfs, j_lst, e_lst, tags)
 
-        return self.repo.load_korean_lexicon()
+        return self.repo.create_korean_dict()
 
-    def generate_japanese_table(self):
+    def _generate_japanese_dct(self):
         #URL = "https://www.yomiuri.co.jp/hobby/travel/20220802-OYT1T50077/"
         #web_scr = WebScraper(URL, "japanese").parse_from_web()
         text = open('web_data1.txt', 'r').read()
@@ -150,21 +152,21 @@ class Services:
         e_lst = [TaggedSentence(word, 'japanese').translate("en") for word in words]
         self.repo.insert_japanese_table(words, k_lst, e_lst, tags)
 
-        return self.repo.load_japanese_lexicon()
+        return self.repo.create_japanese_dict()
 
-    def _show_result(self):  # show tfidf, japanese, enlighs and pos of the Korean word (search_word)
+    def show_result(self, word, language):  # show tfidf, japanese, enlighs and pos of the Korean word (search_word)
         result = ''
 
-        if self.target_lang == 'korean':
-            db = self.generate_korean_table()
+        if language == 'korean':
+            db = self.repo.load_korean_lexicon()
             for i in db:
-                if i.word == self.search_word:
+                if i.word == word:
                     result = i
 
-        elif self.target_lang == 'japanese':
-            db1 = self.generate_japanese_table()
+        elif language == 'japanese':
+            db1 = self.repo.load_japanese_lexicon()
             for j in db1:
-                if j.word == self.search_word:
+                if j.word == word:
                     result = j
 
         if result is not None:
