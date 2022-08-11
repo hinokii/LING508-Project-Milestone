@@ -9,6 +9,7 @@ def test_service_korean():
 
 def test_service_japanese():
     result = Services().show_result('天守', 'japanese')
+    assert result.tfidf == 0.491773
     assert result.korean == '성 타워'
     assert result.english== 'Castle tower'
-    assert result.pos == 'Verb'
+    assert result.pos == "['Noun']"

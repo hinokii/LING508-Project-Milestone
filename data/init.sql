@@ -13,6 +13,7 @@ CREATE TABLE korean (
 
 CREATE TABLE japanese (
     word NVARCHAR(30),
+    tfidf FLOAT,
     korean NVARCHAR(30),
     english VARCHAR(30),
     pos VARCHAR(30)

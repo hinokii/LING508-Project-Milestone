@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from konlpy.tag import Kkma
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
+import nagisa
 from db.mysql_repo import *
 
 '''
@@ -83,8 +84,11 @@ class TaggedSentence:
     # Translate a sentence using googletrans
     def translate(self, destination_language):
         translator = Translator()
-        translated_text = translator.translate(self.sent, dest=destination_language)
-        return translated_text.text
+        try:
+            translated_text = translator.translate(self.sent, dest=destination_language)
+            return translated_text.text
+        except:
+             pass
 
 
 class TokenizeKoreanSent:
@@ -97,16 +101,23 @@ class TokenizeKoreanSent:
         tx = kkma.sentences(self.text)
         return tx
 
+class TokenizeJpSent:
+    def __init__(self, text):
+        self.text = text
+
+    def tokenize_jp(self):
+        doc = nagisa.filter(self.text, filter_postags=['助詞', '補助記号', '助動詞'])
+        return doc.words
 
 # Compute TFIDF using sklearn and return pandas DataFrame with tokenized
 # words and corresponding tfidf
 class VocabTFIDF:
-    def __init__(self, sentences):
+    def __init__(self, sentences, token_method=None):
         self.sent = sentences
-        self.df = self._create_pandas()
+        self.df = self._create_pandas(token_method)
 
-    def _create_pandas(self):
-        vectorizer = TfidfVectorizer(use_idf=True)
+    def _create_pandas(self, token_method=None):
+        vectorizer = TfidfVectorizer(tokenizer=token_method, use_idf=True)
         tfidf = vectorizer.fit_transform(self.sent)
         vocabulary = vectorizer.vocabulary_
         #print(vocabulary)
@@ -145,12 +156,23 @@ class Services:
     def _generate_japanese_dct(self):
         #URL = "https://www.yomiuri.co.jp/hobby/travel/20220802-OYT1T50077/"
         #web_scr = WebScraper(URL, "japanese").parse_from_web()
-        text = open('web_data1.txt', 'r').read()
-        words = [x for x, y in TaggedSentence(text, 'japanese').tagged][1:10]
-        tags =  [y for x, y in TaggedSentence(text, 'japanese').tagged]
+        text = []
+        with open('web_data1.txt', 'r') as f:
+            text.append(f.read())
+
+        def tokenize_jp(text):
+            doc = nagisa.filter(text, filter_postags=['助詞', '補助記号', '助動詞'])
+            return doc.words
+        df = VocabTFIDF(text, tokenize_jp).df
+        tfidfs = df['tfidf'].tolist()[:10]
+        words = df.index.values.tolist()[:10]
+
+        tags = [str([y for x, y in TaggedSentence(word, 'japanese').tagged]) for word in words]
+        #words = [x for x, y in TaggedSentence(text, 'japanese').tagged][1:10]
+        #tags =  [y for x, y in TaggedSentence(text, 'japanese').tagged]
         k_lst = [TaggedSentence(word, 'japanese').translate("ko") for word in words]
         e_lst = [TaggedSentence(word, 'japanese').translate("en") for word in words]
-        self.repo.insert_japanese_table(words, k_lst, e_lst, tags)
+        self.repo.insert_japanese_table(words, tfidfs, k_lst, e_lst, tags)
 
         return self.repo.create_japanese_dict()
 
@@ -173,4 +195,62 @@ class Services:
             return result
         else:
             return "I don't have that word!"
+'''
+import nagisa
+from sklearn.feature_extraction.text import TfidfVectorizer
 
+text = []
+with open('web_data .txt', 'r') as f:
+    text.append(f.read())
+
+
+#text = open('web_data1.txt', 'r').read()
+
+
+# Takes in a document, filtering out particles, punctuation, and verb endings
+
+
+#text = open('web_data.txt', 'r').read()
+
+
+df = VocabTFIDF(text).df
+print("TEST", df)
+
+# Vectorizer and count words (with a custom tokenizer)
+vectorizer = TfidfVectorizer(tokenizer=tokenize_jp, use_idf=True)
+tfidf = vectorizer.fit_transform(text)
+
+# Get a nice readable dataframe of words
+#words_df = pd.DataFrame(matrix.toarray(), columns=vectorizer.get_feature_names())
+
+
+
+df = pd.DataFrame(tfidf[0].T.todense(),
+                          index=vectorizer.get_feature_names_out(),
+                          columns=['tfidf'])
+df = df.sort_values(by=['tfidf'], ascending=False)
+print(df)
+
+text = open('web_data.txt', 'r').read()
+text = []
+with open('web_data.txt', 'r') as f:
+    text.append(f.read())
+def tokenize_korean(text):
+    kkma = Kkma()
+    tokenized = kkma.nouns(text)
+    #tx = kkma.sentences(text)
+    return tokenized
+
+
+vectorizer = TfidfVectorizer(tokenizer=tokenize_korean, use_idf=True)
+tfidf = vectorizer.fit_transform(text)
+
+df = pd.DataFrame(tfidf[0].T.todense(),
+                          index=vectorizer.get_feature_names_out(),
+                          columns=['tfidf'])
+df = df.sort_values(by=['tfidf'], ascending=False)
+'''
+text = open('web_data.txt', 'r').read()
+tk = TokenizeKoreanSent(text)
+tokenized = tk.tokenize_korean()
+print(VocabTFIDF(text).df)
