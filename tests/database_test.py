@@ -21,7 +21,7 @@ def test_japanese_database():
     k_lst = [TaggedSentence(word, 'japanese').translate("ko") for word in words]
     e_lst = [TaggedSentence(word, 'japanese').translate("en") for word in words]
     repo = MysqlRepository()
-    repo.insert_japanese_table(words, k_lst, e_lst, tags)
+    repo.insert_japanese_table(words, tfidfs, k_lst, e_lst, tags)
     result = repo.load_japanese_lexicon()
     for i in result:
         if i.word == '時計':
