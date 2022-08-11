@@ -86,7 +86,7 @@ class MysqlRepository(Repository):
         # when docker-compose up based on docker-compose.yml, but on github, it doesn't seem to initial
         # data/init.db so I have to manually create table here. I think I need to add it to github action,
         # but not sure how.
-        japanese_doc = """CREATE TABLE IF NOT EXISTS japanese (word VARCHAR(50), korean VARCHAR(50),
+        japanese_doc = """CREATE TABLE IF NOT EXISTS japanese (word VARCHAR(50), tfidf FLOAT, korean VARCHAR(50),
                                                                          english VARCHAR(50), pos VARCHAR(50))"""
         self.cursor.execute(japanese_doc)
         self.cursor.execute("ALTER TABLE japanese CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")

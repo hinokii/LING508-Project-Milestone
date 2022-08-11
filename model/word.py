@@ -15,7 +15,7 @@ class JapaneseWord:
         self.word = str
         self.pos = str
         self.tfidf = float
-        self.japanese = str
+        self.korean = str
         self.english = str
 
 class JapaneseWords:

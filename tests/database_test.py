@@ -1,5 +1,5 @@
 from db.mysql_repo import *
-from app.process import *
+from app.services import VocabTFIDF
 
 def test_japanese_database():
     #text = open('web_data1.txt', 'r').read()
