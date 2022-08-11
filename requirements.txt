@@ -12,4 +12,4 @@ mysql-connector-python~=8.0.29
 Flask~=2.1.3
 fugashi~=1.1.2
 SudachiDict-core
-
+nagisa~=0.2.7
