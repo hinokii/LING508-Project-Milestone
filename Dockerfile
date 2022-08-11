@@ -14,4 +14,4 @@ RUN apt-get update && \
 
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/bin/java
 
-
+CMD python app.py
