@@ -1,3 +1,4 @@
+import nagisa
 from db.mysql_repo import *
 from app.services import VocabTFIDF
 
