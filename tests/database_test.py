@@ -1,6 +1,6 @@
 import nagisa
 from db.mysql_repo import *
-from app.services import VocabTFIDF
+from app.services import *
 
 def test_japanese_database():
     #text = open('web_data1.txt', 'r').read()
