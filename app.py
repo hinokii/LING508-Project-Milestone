@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from logging.config import dictConfig
+from flask_restful import Api, Resource
 from app.services import Services
 
 dictConfig({
@@ -40,7 +41,6 @@ def get_data():
 # This is to be called with Postman
 @app.route("/post/<string:word>", methods=['POST'])
 def post_word(word):
-
     for i in services.k_dict:
         if i['word'] == word:
             return i
@@ -66,8 +66,19 @@ def post_data():
 
     return render_template("web/project.html")
 
+api = Api(app)
+
+class FlaskApi(Resource):
+    def get(self, name):
+        for i in services.j_dict:
+            if i['word'] == name:
+                return i
+
+api.add_resource(FlaskApi, "/word/<string:name>")
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
+
 
 
 
