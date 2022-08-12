@@ -1,4 +1,4 @@
-from app.process import *
+from app.services import TaggedSentence
 import pytest
 import os
 
