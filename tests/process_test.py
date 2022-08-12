@@ -14,12 +14,22 @@ def test_k_pos():
 
 def test_j_pos():
     pos1 = TaggedSentence(j_sent, 'japanese')
-    assert pos1.tagged == [('猫', 'Noun'), ('は', 'Post Positional Particle'),
-        ('基本的', 'Noun'), ('に', 'Auxiliary Verb'), ('ほか', 'Noun'),
-        ('の', 'Post Positional Particle'), ('動物', 'Noun'),
-        ('を', 'Post Positional Particle'), ('捕らえ', 'Verb'),
-        ('て', 'Post Positional Particle'), ('食べる', 'Verb'), ('肉食', 'Noun'),
-        ('動物', 'Noun'), ('です', 'Auxiliary Verb')]
+    print(pos1)
+    assert pos1.tagged == [('猫', 'Noun'),
+                           ('は', 'Post Positional Particle'),
+                           ('基本', 'Noun'),
+                           ('的', 'Conjunction'),
+                           ('に', 'Auxiliary Verb'),
+                           ('ほか', 'Noun'),
+                           ('の', 'Post Positional Particle'),
+                           ('動物', 'Noun'),
+                           ('を', 'Post Positional Particle'),
+                           ('捕らえ', 'Verb'),
+                           ('て', 'Post Positional Particle'),
+                           ('食べる', 'Verb'),
+                           ('肉食', 'Noun'),
+                           ('動物', 'Noun'),
+                           ('です', 'Auxiliary Verb')]
 
 def test_translate_j_to_k():
     tran = TaggedSentence(j_sent, "japanese")
