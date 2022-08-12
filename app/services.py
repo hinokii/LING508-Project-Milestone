@@ -101,14 +101,6 @@ class TokenizeKoreanSent:
         tx = kkma.sentences(self.text)
         return tx
 
-class TokenizeJpSent:
-    def __init__(self, text):
-        self.text = text
-
-    def tokenize_jp(self):
-        doc = nagisa.filter(self.text, filter_postags=['助詞', '補助記号', '助動詞'])
-        return doc.words
-
 # Compute TFIDF using sklearn and return pandas DataFrame with tokenized
 # words and corresponding tfidf
 class VocabTFIDF:
@@ -129,20 +121,16 @@ class VocabTFIDF:
 
 class Services:
     def __init__(self):
-        #self.search_word = search_word
-        #self.target_lang = target_lang
         self.repo = MysqlRepository()
         self.k_dict = self._generate_korean_dct()
         self.j_dict = self._generate_japanese_dct()
-        #self.result = self._show_result()
 
     def _generate_korean_dct(self):
         #url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
         #ws = WebScraper(url)
         #file = ws.parse_from_web()
         text = open('web_data.txt', 'r').read()
-        tk = TokenizeKoreanSent(text)
-        tokenized = tk.tokenize_korean()
+        tokenized = TokenizeKoreanSent(text).tokenize_korean()
         df = VocabTFIDF(tokenized).df
         tfidfs = df['tfidf'].tolist()[:7]
         words = df.index.values.tolist()[:7]
@@ -163,20 +151,20 @@ class Services:
         def tokenize_jp(text):
             doc = nagisa.filter(text, filter_postags=['助詞', '補助記号', '助動詞'])
             return doc.words
+
         df = VocabTFIDF(text, tokenize_jp).df
         tfidfs = df['tfidf'].tolist()[:10]
         words = df.index.values.tolist()[:10]
 
         tags = [str([y for x, y in TaggedSentence(word, 'japanese').tagged]) for word in words]
-        #words = [x for x, y in TaggedSentence(text, 'japanese').tagged][1:10]
-        #tags =  [y for x, y in TaggedSentence(text, 'japanese').tagged]
         k_lst = [TaggedSentence(word, 'japanese').translate("ko") for word in words]
         e_lst = [TaggedSentence(word, 'japanese').translate("en") for word in words]
         self.repo.insert_japanese_table(words, tfidfs, k_lst, e_lst, tags)
 
         return self.repo.create_japanese_dict()
 
-    def show_result(self, word, language):  # show tfidf, japanese, enlighs and pos of the Korean word (search_word)
+    # show tfidf, japanese, enlighs and pos of the JP or KR word (search_word)
+    def show_result(self, word, language):
         result = ''
 
         if language == 'korean':
