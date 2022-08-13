@@ -3,9 +3,6 @@ from db.mysql_repo import *
 from app.services import *
 
 def test_japanese_database():
-    #text = open('web_data1.txt', 'r').read()
-    #words = [x for x, y in TaggedSentence(text, 'japanese').tagged][1:10]
-    #tags = [y for x, y in TaggedSentence(text, 'japanese').tagged]
     text = []
     with open('web_data1.txt', 'r') as f:
         text.append(f.read())
