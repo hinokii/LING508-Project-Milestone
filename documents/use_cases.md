@@ -8,13 +8,13 @@
 
                        * Josa means postpositional particle. 
                        
-**2. Translation from Japanese or Korean to English – the app takes a word or a sentence in Japanese or Korean from web as input and returns a word or a sentence in English.**
+**2. Translation from Japanese or Korean to English – the app takes a word or a sentence in Japanese or Korean as input and returns a word or a sentence in English.**
        
 	Example 2: Input = 旅行に行きたい!  
 
                Output = I want to go on a trip!
 
-**3. Translation from Japanese to Korean or from Korean to Japanese - the app takes a word or a sentence in Japanese or Korean from web as input and returns a word or a sentence in Korean (if input = Japanese) or Japanese (if input = Korean).**
+**3. Translation from Japanese to Korean or from Korean to Japanese - the app takes a word or a sentence in Japanese or Korean as input and returns a word or a sentence in Korean (if input = Japanese) or Japanese (if input = Korean).**
 
 	Example 3: Input = 猫は基本的に、ほかの動物を捕らえて食べる肉食動物です
 
