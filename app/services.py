@@ -184,8 +184,17 @@ class Services:
             return "I don't have that word!"
 
 '''
-REFERENCE
+REFERENCES
 1. Ng Wai Foong. 2019. SudachiPy: A Japanese Morphological Analyzer in Python.
    Towards Data Science. 
    https://towardsdatascience.com/sudachipy-a-japanese-morphological-analyzer-in-python-5f1f8fc0c807
+
+2. Kavita Ganesan. 2021. How to Use Tfidftransformer & Tfidfvectorizer? 
+   AI Implementation, Hands-On NLP.
+   https://kavita-ganesan.com/tfidftransformer-tfidfvectorizer-usage-differences/#.YvfDM2HMLJU
+   
+3. Jonathan Soma. How to use NLP with scikit-learn vectorizers in Japanese, Chinese 
+   (and other East Asian languages) by using a custom tokenize.
+   Data Science for Journalism a.k.a. investigate.ai.
+   https://investigate.ai/text-analysis/how-to-make-scikit-learn-natural-language-processing-work-with-japanese-chinese/
 '''
