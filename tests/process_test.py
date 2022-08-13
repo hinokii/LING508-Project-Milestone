@@ -1,4 +1,4 @@
-from app.services import TaggedSentence
+from app.services import *
 import pytest
 import os
 
@@ -40,15 +40,14 @@ def test_translate_k_to_e():
     tran = TaggedSentence(k_sent, "korean")
     assert tran.translate("en") == 'I need to find a cold noodle restaurant in ' \
                                'Seoul'
-'''
+
 def test_tfidf():
     #URL = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
     #web_scr = WebScraper(URL, "korean")
     tx = open('web_data.txt', 'r').read()
-
     tokenized = TokenizeKoreanSent(tx)
     tfidf = VocabTFIDF(tokenized.tokenize_korean())
     df = tfidf.df
     result = df.loc[df.index == '고려', 'tfidf'].to_string(index=False)
     assert float(result) == 0.358313
-'''   
+
