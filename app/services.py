@@ -97,7 +97,6 @@ class TokenizeKoreanSent:
 
     def tokenize_korean(self):
         kkma = Kkma()
-        tokenized = kkma.morphs(self.text)
         tx = kkma.sentences(self.text)
         return tx
 
@@ -183,3 +182,10 @@ class Services:
             return result
         else:
             return "I don't have that word!"
+
+'''
+REFERENCE
+1. Ng Wai Foong. 2019. SudachiPy: A Japanese Morphological Analyzer in Python.
+   Towards Data Science. 
+   https://towardsdatascience.com/sudachipy-a-japanese-morphological-analyzer-in-python-5f1f8fc0c807
+'''
