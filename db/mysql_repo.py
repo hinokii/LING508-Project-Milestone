@@ -5,7 +5,7 @@ from model.word import *
 class MysqlRepository(Repository):
     def __init__(self):
         super().__init__()
-        '''
+
         #For local use
         config = {'user': 'root',
             	  'passwd': 'test',
@@ -18,7 +18,7 @@ class MysqlRepository(Repository):
                   'host': 'mysql',
                   'port': '3306',
                   'database': 'project'}
-
+        '''
         self.conn = mysql.connector.connect(**config)
         self.cursor = self.conn.cursor()
 
@@ -37,21 +37,22 @@ class MysqlRepository(Repository):
         # when docker-compose up based on docker-compose.yml, but on github, it doesn't seem to initial
         # data/init.db so I have to manually create table here. I think I need to add it to github action,
         # but not sure how.
-        korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
-                                                                         english VARCHAR(50), pos VARCHAR(50))"""
-        self.cursor.execute(korean_doc)
+        #korean_doc = """CREATE TABLE IF NOT EXISTS korean (word VARCHAR(50), tfidf FLOAT, japanese VARCHAR(50),
+                                                                         #english VARCHAR(50), pos VARCHAR(50))"""
+        #self.cursor.execute(korean_doc)
         self.cursor.execute("ALTER TABLE korean CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")
 
         sql = "INSERT INTO korean VALUES (%s, %s, %s, %s, %s)"
 
-        for i in range(len(list1)):
-            self.cursor.execute(sql, (list1[i], list2[i], list3[i], list4[i], list5[i]))
+        for (a,b,c,d,e) in zip(list1, list2, list3, list4, list5):
+            self.cursor.execute(sql, (a,b,c,d,e))
 
         self.conn.commit()
 
     def create_korean_dict(self):
         sql = 'SELECT * FROM korean'
         self.cursor.execute(sql)
+
         entries = [{'word': word,
                     'tfidf': tfidf,
                     'japanese': japanese,
@@ -86,15 +87,15 @@ class MysqlRepository(Repository):
         # when docker-compose up based on docker-compose.yml, but on github, it doesn't seem to initial
         # data/init.db so I have to manually create table here. I think I need to add it to github action,
         # but not sure how.
-        japanese_doc = """CREATE TABLE IF NOT EXISTS japanese (word VARCHAR(50), tfidf FLOAT, korean VARCHAR(50),
-                                                                         english VARCHAR(50), pos VARCHAR(50))"""
-        self.cursor.execute(japanese_doc)
+        #japanese_doc = """CREATE TABLE IF NOT EXISTS japanese (word VARCHAR(50), tfidf FLOAT, korean VARCHAR(50),
+                                                                         #english VARCHAR(50), pos VARCHAR(50))"""
+        #self.cursor.execute(japanese_doc)
         self.cursor.execute("ALTER TABLE japanese CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci")
 
         sql = "INSERT INTO japanese VALUES (%s, %s, %s, %s, %s)"
 
-        for i in range(len(list1)):
-            self.cursor.execute(sql, (list1[i], list2[i], list3[i], list4[i], list5[i]))
+        for (a,b,c,d,e) in zip(list1, list2, list3, list4, list5):
+            self.cursor.execute(sql, (a,b,c,d,e))
 
         self.conn.commit()
 
@@ -106,8 +107,6 @@ class MysqlRepository(Repository):
                     'korean': korean,
                     'english': english,
                     'pos': pos,
-                    
-                    
                     } for (word, tfidf, korean, english, pos) in self.cursor]
         return entries
 

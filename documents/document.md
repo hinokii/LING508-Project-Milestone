@@ -1,25 +1,23 @@
 # Word Info
 
-You can obtain the information of a Japanese word or Korean word including english translation, Korean or Japanese translation, pos and TFIDF. Enter a Japanese or Korean word in the box, select a language (Japanese or Korean) from Radio button and click "Submit". The page will display the parse for that word as a JSON string, for example
+You can obtain the information of a Japanese word or Korean word including the english translation, the Korean or Japanese translation (for a Japanese or Korean word, respectively), Part of Speech and TFIDF. Enter a Japanese or Korean word in the box, select a language (Japanese or Korean) from Radio button and click "Submit". The page will display the parse for that word as a JSON string, for example
 
-For a Japanese word "天守":
+For a Japanese word "渡櫓":
 
-
-    "english": "Housing",
-    "japanese": "ハウジング",
+    "english": "Tower",
+    "korean": "탑",
     "pos": "['Noun']",
-    "tfidf": 0.297862,
-    "word": "주택"
+    "tfidf": 0.347134,
+    "word": "渡櫓"
 
 
-For a Korean word "주택":
+For a Korean word "단일화":
 
-
-    "english": "Housing",
-    "japanese": "ハウジング",
-    "pos": "['Noun']",
-    "tfidf": 0.297862,
-    "word": "주택"
+    "english": "Unification",
+    "japanese": "統一",
+    "pos": "['Modifier', 'Noun']",
+    "tfidf": 0.179157,
+    "word": "단일화"
 
 
 The API can be called directly without the UI, using a POST request (Postman). The endpoint is http://localhost:5000/post/. The POST request must contain a JSON body with the "word" key, for example {"word": "세율"}
