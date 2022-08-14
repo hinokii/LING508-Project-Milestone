@@ -66,20 +66,7 @@ def post_data():
 
     return render_template("web/project.html")
 
-'''
-#This is the code for pytest test file "api_test.py", which doesn't work on 
-#automated pytest on github.
 
-api = Api(app)
-
-class FlaskApi(Resource):
-    def get(self, name):
-        for i in services.j_dict:
-            if i['word'] == name:
-                return i
-
-api.add_resource(FlaskApi, "/word/<string:name>")
-'''
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
 
