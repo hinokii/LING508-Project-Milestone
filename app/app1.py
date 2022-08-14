@@ -14,12 +14,11 @@ def create_app():
     def get_data():
         return jsonify(services.k_dict)
 
-
     @app.route("/post_data", methods=['POST'])
     def post_data():
         response = request.get_json()
-        services.j_dict.append(response)
-        return jsonify({"msg": "success", "data": services.j_dict})
+        services.k_dict.append(response)
+        return jsonify({"msg": "success", "data": services.k_dict})
 
     return app
 
