@@ -26,7 +26,9 @@ def test_post_data(client):
     assert response.get("msg") == "success"
     rv = client.get('/get_data')
     data = json.loads(rv.data)
-    assert data[-1].get("japanese") == "意見"
+
+    if data.get("word") == "의견":
+        assert data.get("japanese") == "意見"
 
 
 
