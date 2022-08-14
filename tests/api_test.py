@@ -1,3 +1,30 @@
+import pytest
+import json
+from app.app1 import *
+
+
+@pytest.fixture
+def client():
+    a = create_app()
+    with a.test_client() as client:
+        yield client
+
+def test_hello(client):
+    rv = client.get('/hello')
+    assert b"Hello World!" in rv.data
+
+def test_get_data(client):
+    rv = client.get('/get_data')
+    data = json.loads(rv.data)
+    assert data[0].get('word') == "고려"
+
+
+
+
+
+
+
+
 '''
 import requests
 
