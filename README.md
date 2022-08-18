@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Word Info in Japanese & Korean
 
 You can enter a Japanese or Korean word and obtain the information about that word including the english translation, the Korean or Japanese translation (for a Japanese or Korean word, respectively), Part of Speech and TFIDF. 
@@ -22,6 +21,4 @@ For a Korean word "단일화", you will get:
     "tfidf": 0.179157,
     "word": "단일화"
 =======
-# LING-508-
 
->>>>>>> c0b838543a0aa4ebaef697d0124314ea10a1ff88
