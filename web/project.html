@@ -15,4 +15,51 @@
         <p><input type = "submit" value = "submit" /></p>
     </form>
 </body>
+
+<script>
+async function handleSubmit1(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+    value.word = data.get("word");
+    console.log({value});
+
+    const response = await fetch('http://localhost:5000/parse', {
+        method: 'POST',
+        body: JSON.stringify(value),
+        headers: {
+            'Content-Type': 'application/json',
+            }
+        });
+    const myJson = await response.json();
+    console.log(myJson);
+    document.getElementById('response').textContent = JSON.stringify(myJson, undefined, 2);
+}
+const form1 = document.getElementById("form1");
+form1.addEventListener("submit", async (e) => handleSubmit1(e), false);
+
+async function handleSubmit2(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+    value.compound = data.get("compound");
+    console.log({value});
+
+    const response = await fetch('http://localhost:5000/segment', {
+        method: 'POST',
+        body: JSON.stringify(value),
+        headers: {
+            'Content-Type': 'application/json',
+            }
+        });
+    const myJson = await response.json();
+    console.log(myJson);
+    document.getElementById('segments').textContent = JSON.stringify(myJson, undefined, 2);
+}
+const form2 = document.getElementById("form2");
+form2.addEventListener("submit", async (e) => handleSubmit2(e), false);
+</script>
+
 </html>
