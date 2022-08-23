@@ -49,5 +49,5 @@ def test_tfidf():
     tfidf = VocabTFIDF(tokenized.tokenize_korean())
     df = tfidf.df
     result = df.loc[df.index == '고려', 'tfidf'].to_string(index=False)
-    assert float(result) == 0.358313
+    assert float(result) == 0.35763
 
