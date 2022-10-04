@@ -5,7 +5,7 @@ from googletrans import Translator
 # pip install googletrans==4.0.0rc1
 import requests
 from bs4 import BeautifulSoup
-from readability import Document
+#from readability import Document
 from konlpy.tag import Kkma
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
@@ -26,7 +26,6 @@ class WebScraper:
         with open('web_data2.txt', 'w') as file:
             file.write(text)
         return file
-url = "https://n.news.naver.com/article/088/0000777415"
 '''
 # Return tuple of each morpheme (Korean or Japanese) and POS (English)
 class TaggedSentence:
@@ -128,7 +127,7 @@ class Services:
         #url
         #ws = WebScraper(url)
         #file = ws.parse_from_web()
-        text = open('web_data2.txt', 'r').read()
+        text = open('web_data.txt', 'r').read()
         tokenized = TokenizeKoreanSent(text).tokenize_korean()
         df = VocabTFIDF(tokenized).df
         tfidfs = df['tfidf'].tolist()[:10]
