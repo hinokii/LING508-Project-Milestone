@@ -5,7 +5,7 @@ from googletrans import Translator
 # pip install googletrans==4.0.0rc1
 import requests
 from bs4 import BeautifulSoup
-# from readability import Document
+from readability import Document
 from konlpy.tag import Kkma
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
@@ -23,11 +23,11 @@ class WebScraper:
         print(page)
         soup = BeautifulSoup(doc, "lxml")
         text = soup.get_text()
-        with open('web_data.txt', 'w') as file:
+        with open('web_data2.txt', 'w') as file:
             file.write(text)
         return file
+url = "https://n.news.naver.com/article/088/0000777415"
 '''
-
 # Return tuple of each morpheme (Korean or Japanese) and POS (English)
 class TaggedSentence:
     # Take a sentence and language (Japanese or Korean)
@@ -125,14 +125,14 @@ class Services:
         self.j_dict = self._generate_japanese_dct()
 
     def _generate_korean_dct(self):
-        #url = "https://land.naver.com/news/newsRead.naver?type=headline&prsco_id=020&arti_id=0003440084"
+        #url
         #ws = WebScraper(url)
         #file = ws.parse_from_web()
-        text = open('web_data.txt', 'r').read()
+        text = open('web_data2.txt', 'r').read()
         tokenized = TokenizeKoreanSent(text).tokenize_korean()
         df = VocabTFIDF(tokenized).df
-        tfidfs = df['tfidf'].tolist()[:7]
-        words = df.index.values.tolist()[:7]
+        tfidfs = df['tfidf'].tolist()[:10]
+        words = df.index.values.tolist()[:10]
         tags = [str([y for x, y in TaggedSentence(word, 'korean').tagged]) for word in words]
         j_lst = [TaggedSentence(word, 'korean').translate("ja") for word in words]
         e_lst = [TaggedSentence(word, 'korean').translate("en") for word in words]
@@ -154,7 +154,6 @@ class Services:
         df = VocabTFIDF(text, tokenize_jp).df
         tfidfs = df['tfidf'].tolist()[:10]
         words = df.index.values.tolist()[:10]
-
         tags = [str([y for x, y in TaggedSentence(word, 'japanese').tagged]) for word in words]
         k_lst = [TaggedSentence(word, 'japanese').translate("ko") for word in words]
         e_lst = [TaggedSentence(word, 'japanese').translate("en") for word in words]
@@ -198,3 +197,9 @@ REFERENCES
    Data Science for Journalism a.k.a. investigate.ai.
    https://investigate.ai/text-analysis/how-to-make-scikit-learn-natural-language-processing-work-with-japanese-chinese/
 '''
+#result = Services().k_dict
+#print(result)
+print(Services().show_result("주택", "korean").japanese)
+print(Services().show_result("주택", "korean").english)
+print(Services().show_result("주택", "korean").pos)
+#print(results)
